@@ -3,13 +3,29 @@ import Stack from "../sdk/entry"
 import { Card, Row, Col } from 'react-bootstrap';
 
 export default class Home extends Component {
+    constructor(props) {
+        super(props)
+        this.state = {
+            entry: undefined,
+            header: undefined,
+            navigation: undefined,
+        }
+    }
 
     async componentDidMount() {
-        const { location } = this.props
-        const result = await Stack.getEntryByUrl("page", location.pathname)
+        try {
+            const result = await Stack.getEntry("home")
         this.setState({
-            entry: result[0]
-        })
+            entry: result[0],
+            header: undefined,
+            navigation: [0][0],
+        }) 
+        }
+        catch (error) {
+            this.setState({
+                error: { errorStatus: true, errorCode: 404, errorData: error},
+            })
+        }
     }
 
     render() {
@@ -17,7 +33,7 @@ export default class Home extends Component {
         return (
             <div className="home">
                 <div className="home-title">
-                    <p><b>{console.log(result)}</b></p>
+                    <p><b>console.log(result)</b></p>
                 </div>
             <div>
                 
@@ -29,7 +45,7 @@ export default class Home extends Component {
                         <Card>
                             <Card.Img variant="top" src="#" className=".img-fluid img-thumbnail" />
                             <Card.Body className="card-body">
-                                <Card.Title className="card-title">{result}</Card.Title>
+                                <Card.Title className="card-title">Tesla</Card.Title>
                                 <Card.Text className="card-text">
                                     Model 3
                                 </Card.Text>

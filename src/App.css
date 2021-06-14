@@ -6,7 +6,7 @@
 .nav-bar {
     background: rgb(239, 239, 239);
 }
-.nav-bar-brand-text {
+.nav-bar-logo-text {
     color: rgb(74, 97, 120);
     font-size: 20px;
     margin-bottom: 0;
@@ -33,4 +33,7 @@ button{
 }
 .home-title {
     color: rgb(96, 127, 156);
+}
+.card-body, .card-text, .card-title {
+    background-color: white !important;
 }

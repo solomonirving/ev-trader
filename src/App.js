@@ -1,19 +1,19 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/Home";
-import Navbar from "./components/Navbar";
+import Navigation from "./components/Navigation";
 import Header from "./components/Header";
 import "./App.css";
 
 function App() {
+  
   return (
     <div className="App">
       <Router>
       <Header />
-      <Navbar />
+      <Navigation />
           <Switch>
-            <Route exact path="/" />
-            <Home />
+            <Route exact path="/" render={(renderProps) => <Home {...renderProps} />} />
           </Switch>
       </Router>
     </div>
