@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/Home";
-import Navigation from "./components/Navigation";
+import Category from "./components/Category";
 import Header from "./components/Header";
 import "./App.css";
 
@@ -11,7 +11,7 @@ function App() {
     <div className="App">
       <Router>
       <Header />
-      <Navigation />
+      <Category />
           <Switch>
             <Route exact path="/" render={(renderProps) => <Home {...renderProps} />} />
           </Switch>

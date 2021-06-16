@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
 
-export default class Navigation extends Component {
+export default class Category extends Component {
     state = {
         headers: []
     }
@@ -34,6 +34,7 @@ export default class Navigation extends Component {
                     <a className="nav-link" href="/#">Latest</a>
                     {this.state.headers.map(ev => (
                         <div key={ev.uid}>
+                            
                             <Nav className="mr-auto">    
                                 <a className="nav-link" href="/#">{ev.title}</a>
                             </Nav>

@@ -24,7 +24,7 @@ export default class Home extends Component {
         const response = await fetch(url, requestOptions)
         const data = await response.json()
             this.setState({vehicle: data.entries})
-            console.log(data.entries)
+            // console.log(data.entries)
     }
 
 

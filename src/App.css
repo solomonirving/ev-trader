@@ -129,4 +129,7 @@ button{
     .home {
         padding-left: 60px;
     }
+    .p2 {
+        font-size: 10px !important;
+    }
   }
