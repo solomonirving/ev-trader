@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Navbar, Button, FormControl, Form } from 'react-bootstrap';
 
 export default class Header extends Component {
+
     render() {
         return (
             <div className="nav-bar align-text-bottom">

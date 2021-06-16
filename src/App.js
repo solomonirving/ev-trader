@@ -4,7 +4,6 @@ import Home from "./components/Home";
 import Navigation from "./components/Navigation";
 import Header from "./components/Header";
 import "./App.css";
-console.log(process.env.REACT_APP_DELIVERY_TOKEN)
 
 function App() {
   

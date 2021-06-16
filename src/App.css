@@ -37,3 +37,12 @@ button{
 .card-body, .card-text, .card-title {
     background-color: white !important;
 }
+.card-text-span {
+    background-color: white !important;
+    font-size: 12px;
+    padding-left: 10px;
+}
+.home-cards {
+    margin: 10px;
+}
+
