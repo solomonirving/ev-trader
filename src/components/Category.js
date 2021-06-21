@@ -29,12 +29,10 @@ export default class Category extends Component {
         return (
             <div>
                 <Navbar expand= "md">
-                <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse  id="basic-navbar-nav">
                     <a className="nav-link" href="/#">Latest</a>
                     {this.state.headers.map(ev => (
                         <div key={ev.uid}>
-                            
                             <Nav className="mr-auto">    
                                 <a className="nav-link" href="/#">{ev.title}</a>
                             </Nav>

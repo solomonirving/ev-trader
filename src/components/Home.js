@@ -34,7 +34,7 @@ export default class Home extends Component {
             <div className="home-main">
                 <div className="home">
                     <div className="home-title">
-                        <p><b>Newest Listings</b></p>
+                        <p className="newest-listings"><b>Newest Listings</b></p>
                     </div>
                 </div>
 
