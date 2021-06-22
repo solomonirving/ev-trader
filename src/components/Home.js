@@ -1,11 +1,16 @@
 import React, { Component } from 'react';
 import { Card } from 'react-bootstrap';
-
+import VehicleDetail from "./VehicleDetail"
 
 
 export default class Home extends Component {
-    state = {
-        vehicle: []
+    constructor(props) {
+        super(props)
+        this.state = {
+            vehicle: [], 
+            showComponent: false,
+    }
+        this.onButtonClick = this.onButtonClick.bind(this);
     }
     
     async componentDidMount() {
@@ -27,6 +32,12 @@ export default class Home extends Component {
             // console.log(data.entries)
     }
 
+    onButtonClick() {
+        this.setState({
+            showComponent:true,
+        })
+    }
+
 
     render() { 
 
@@ -41,7 +52,8 @@ export default class Home extends Component {
                 <div className="contain">
                     {this.state.vehicle.map(ev => (
                         <div key={ev.uid}>
-                            <div className="home-cards">
+                            <div className="home-cards stretched-link" onClick={this.onButtonClick}>
+                                        {this.state.showComponent ? <VehicleDetail /> : null}
                                 <Card className="cards shadow mb-5 bg-white rounded">
                                     <Card.Img variant="top" src={ev.images[0].url} className=".img-fluid rounded-top" />
                                     <Card.Body className="card-body rounded-bottom">
@@ -58,6 +70,7 @@ export default class Home extends Component {
                                                 ${ev.price}
                                             </Card.Text>
                                         </div>
+                                      
                                     </Card.Body>
                                 </Card>
                             </div>

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Category from "./components/Category";
 import Header from "./components/Header";
+import VehicleDetail from "./components/VehicleDetail";
 import "./App.css";
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Category />
           <Switch>
             <Route exact path="/" render={(renderProps) => <Home {...renderProps} />} />
+            <Route path="/vehicle-detail" render={(renderProps) => <VehicleDetail {...renderProps} />} />
           </Switch>
       </Router>
     </div>

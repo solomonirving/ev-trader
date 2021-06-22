@@ -23,7 +23,7 @@ export default class Header extends Component {
         const response = await fetch(url, requestOptions)
         const data = await response.json()
             this.setState({heading: data.entry})
-            console.log(data.entry)
+            // console.log(data.entry)
     }
 
     render() {
