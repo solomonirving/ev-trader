@@ -14,8 +14,14 @@
 /*****************************
             HEADER 
 *****************************/
+#header-input {
+    width: 300px !important;
+}
 .nav-bar {
     background: rgb(239, 239, 239);
+}
+.navbar-collapse {
+    background-color: blue !important;
 }
 .nav-bar-logo-text {
     color: rgb(74, 97, 120);

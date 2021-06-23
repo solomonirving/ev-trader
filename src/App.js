@@ -14,8 +14,8 @@ function App() {
       <Header />
       <Category />
           <Switch>
-            <Route exact path="/" render={(renderProps) => <Home {...renderProps} />} />
-            <Route path="/vehicle-detail" render={(renderProps) => <VehicleDetail {...renderProps} />} />
+            <Route exact path="/" component={ Home }/>
+            <Route path="/detail:id" component={ VehicleDetail } />
           </Switch>
       </Router>
     </div>
