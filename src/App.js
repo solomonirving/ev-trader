@@ -15,7 +15,7 @@ function App() {
       <Category />
           <Switch>
             <Route exact path="/" component={ Home }/>
-            <Route path="/detail:id" component={ VehicleDetail } />
+            <Route path="/vehicle_detail:id" component={ VehicleDetail } />
           </Switch>
       </Router>
     </div>

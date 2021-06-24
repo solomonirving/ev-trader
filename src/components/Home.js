@@ -42,7 +42,7 @@ export default class Home extends Component {
                     <div className="contain">                                        
                         {this.state.vehicle.map(ev => (
                             <div key={ev.uid}>
-                                <Link to ={`/home/${ev.uid}`} style={{ textDecoration: 'none', color: 'rgb(113, 113, 113)' }}>
+                                <Link to ={`/vehicle_detail/${ev.uid}`} style={{ textDecoration: 'none', color: 'rgb(113, 113, 113)' }}>
                                     <div className="home-cards">
                                         <Card className="cards shadow mb-5 bg-white rounded">
                                             <Card.Img variant="top" src={ev.images[0].url} className=".img-fluid rounded-top" />

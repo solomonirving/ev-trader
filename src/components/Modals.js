@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Modal, Button, Form, FormControl } from 'react-bootstrap'
+import { Modal, Form, FormControl } from 'react-bootstrap'
 
 export default class Modals extends Component {
 
@@ -14,7 +14,9 @@ export default class Modals extends Component {
     render() {
       return (
         <>
-            <Button className="p2" id="logInButton" type="button" size="sm rounded-pill" onClick={this.openModal}>Log In</Button>  
+            {/* <p className="p2" id="logInButton" type="button" size="sm rounded-pill" onClick={this.openModal}>Log In</Button>  */}
+            <p className="nav-bar-text mr-auto" id="logInButton" onClick={this.openModal}>Log In</p>
+
             
             <div className="modal-container">
               <Modal className="modal-dialog-centered" id="modal" show={this.state.isOpen} onHide={this.closeModal}>
