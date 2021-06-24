@@ -7,8 +7,8 @@ export default class Header extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            companyLogo:"",
-            head: [],
+            companyLogo:[],
+            heading: [],
             categories: [],
         }
     }
@@ -30,16 +30,17 @@ export default class Header extends Component {
         const response = await fetch(url, requestOptions)
         const data = await response.json()
             this.setState({
-                            // companyLogo: data.result[0].company_logo.url,
+                            companyLogo: data.entry.company_logo.url,
+                            heading: data.entry.navigation_menu[1].title,
                         });
-            console.log(data.entry)
+            // console.log(data.entry.navigation_menu[1].title)
 
         // Categories
-        const url2 = "https://cdn.contentstack.io/v3/content_types/category/entries?environment=development";
-        const response2 = await fetch(url2, requestOptions)
-        const data2 = await response2.json()
-            this.setState({categories: data2.entries})
-            console.log(data2.entries)
+    //     const url2 = "https://cdn.contentstack.io/v3/content_types/category/entries?environment=development";
+    //     const response2 = await fetch(url2, requestOptions)
+    //     const data2 = await response2.json()
+    //         this.setState({categories: data2.entries})
+    //         console.log(data2.entries)
     }
 
     render() {
@@ -50,7 +51,7 @@ export default class Header extends Component {
                 <Navbar className="d-flex" expand= "md">
                     <div className="mr-auto p3">
                     <Link to ={`/`} style={{ textDecoration: 'none', color: 'rgb(113, 113, 113)' }}>
-                        <Card.Img variant="top" src="https://images.contentstack.io/v3/assets/blt54c8c0f2c2a9678f/blt4585c7e2b244b118/60c9269883f9fe49a6fed270/evtrader-logo.png" alt="/" className="img-fluid" />
+                        <Card.Img variant="top" src={this.state.companyLogo} alt="/" className="img-fluid" />
                     </Link>
                     </div>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
@@ -63,7 +64,7 @@ export default class Header extends Component {
                         </div>
                         <Modals />                        
                         <div className="p2 pr-3" id="listMyCar">
-                            <p className="nav-bar-text mr-auto" id="list-my-vehicle">List My Vehicle</p>
+                            <p className="nav-bar-text mr-auto" id="list-my-vehicle">{this.state.heading}</p>
                         </div>
       
                         {/* {this.state.categories.map(ev => (

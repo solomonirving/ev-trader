@@ -232,6 +232,38 @@ button.close {
 }
 
 /*****************************
+            VEHICLE DETAIL 
+*****************************/
+#vehicle_detail_container {
+    font-family: futuraLight;
+}
+#col_1 {
+    padding-left: 0; 
+}
+#detail_image {
+    width: 92%;
+}
+#detail_thumbnail {
+    width: 14.2%;
+    margin: 1% 1% 0 0;
+}
+#detail_thumbnail_2 {
+    width: 14.2%;
+    margin: 1% 0 0 0;
+}
+#column {
+    padding-right: 0;
+}
+#detail_card {
+    width: 60%;
+    margin: 1% 0 0 0;
+}
+#detail_card_title {
+    padding-bottom: 0px !important;
+    font-weight: 900;
+    width: 100%;
+}
+/*****************************
             MEDIA QUERIES 
 *****************************/
 @media (max-width: 1000px) {
