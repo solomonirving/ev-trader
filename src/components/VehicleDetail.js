@@ -45,47 +45,54 @@ export default class VehicleDetail extends Component {
         return (
             <div>
                 <Container fluid id="vehicle_detail_container">
-                    <Col>
-                        <Row>
-                            <Col id="col_1" xs={8}>
-                            <Image className="rounded shadow" id="detail_image" src={this.state.image} />
-                            </Col>
-                            <Col>
-                                {/* <Card className="rounded shadow" id="detail_card">
-                                    <Card.Body className="rounded" id="detail_card_title">Sellers Price</Card.Body>
-                                    <Card.Body className="rounded">{this.state.details.price}</Card.Body>
-                                </Card>
-                                <Card className="rounded shadow" id="detail_card">
-                                    <Card.Body className="rounded" id="detail_card_title">Make An Offer</Card.Body>
-                                </Card> */}
-                            </Col>
-                        </Row>
-                        
-                        <Row>
-                            <Image className="rounded shadow" id="detail_thumbnail" src={this.state.image} />
-                            <Image className="rounded shadow" id="detail_thumbnail" src={this.state.image} />
-                            <Image className="rounded shadow" id="detail_thumbnail" src={this.state.image} />
-                            <Image className="rounded shadow" id="detail_thumbnail_2" src={this.state.image} />
-                        </Row>
+                    <Row>
+                        <Col xs={8}>
+                            <Row>
+                                <Image className="rounded shadow" id="detail_image" src={this.state.image} />
+                            </Row>
+                            
+                            <Row>
+                                <Image className="rounded shadow" id="detail_thumbnail" src={this.state.image} />
+                                <Image className="rounded shadow" id="detail_thumbnail" src={this.state.image} />
+                                <Image className="rounded shadow" id="detail_thumbnail" src={this.state.image} />
+                                <Image className="rounded shadow" id="detail_thumbnail_2" src={this.state.image} />
+                            </Row>
 
-                        <Row className="rounded">
-                            <Card className="rounded shadow" id="detail_card">
+                            <Row className="rounded">
+                                <Card className="rounded shadow" id="detail_card">
                                     <Card.Body className="rounded" id="detail_card_title"> Sellers info</Card.Body>
                                     <Card.Body className="rounded">{this.state.details.seller_name}</Card.Body>   
-                               <Card.Body className="rounded">{this.state.location_city}, {this.state.location_state}</Card.Body>
-                            </Card>
-                        </Row>
+                                    <Card.Body className="rounded">{this.state.location_city}, {this.state.location_state}</Card.Body>
+                                </Card>
+                            </Row>
 
-                        <Row>
+                            <Row>
+                                <Card className="rounded shadow" id="detail_card">
+                                    <Card.Body className="rounded" id="detail_card_title">Description</Card.Body>
+                                    <Card.Body className="rounded">{this.state.details.description}</Card.Body>
+                                </Card>
+                            </Row>
+                        </Col>
+
+                        <Col>
                             <Card className="rounded shadow" id="detail_card">
-                                <Card.Body className="rounded" id="detail_card_title">Description</Card.Body>
-                                <Card.Body className="rounded">{this.state.details.description}</Card.Body>
+                                <Card.Body className="rounded" id="detail_card_title">Sellers Price</Card.Body>
+                                <Card.Body className="rounded">{this.state.details.price}</Card.Body>
                             </Card>
-                        </Row>
-                    </Col>
-
-
-
+                            <Card className="rounded shadow" id="detail_card">
+                                <Card.Body className="rounded" id="detail_card_title">Make An Offer</Card.Body>
+                                <Card.Body className="rounded" id="detail_card_title">Make An Offer</Card.Body>
+                                <Card.Body className="rounded" id="detail_card_title">Make An Offer</Card.Body>
+                                <Card.Body className="rounded" id="detail_card_title">Make An Offer</Card.Body>
+                                <Card.Body className="rounded" id="detail_card_title">Make An Offer</Card.Body>
+                                <Card.Body className="rounded" id="detail_card_title">Make An Offer</Card.Body>
+                                <Card.Body className="rounded" id="detail_card_title">Make An Offer</Card.Body>
+                                <Card.Body className="rounded" id="detail_card_title">Make An Offer</Card.Body>
+                                <Card.Body className="rounded" id="detail_card_title">Make An Offer</Card.Body>
+                            
+                            </Card>
+                        </Col>
+                    </Row>
                 </Container>
           </div>
         )
