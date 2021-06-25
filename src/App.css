@@ -67,6 +67,9 @@
 .d-flex {
     font-family: futuraLight !important;
 }
+#detail_submit { 
+    background-color: rgb(96, 127, 156);
+}
 
 /*****************************
             MODAL 
@@ -236,32 +239,46 @@ button.close {
 *****************************/
 #vehicle_detail_container {
     font-family: futuraLight;
+    color: rgb(113, 113, 113);
 }
-#col_1 {
-    padding-left: 0; 
+#main_row {
+    padding: 0 5%;
+}
+#col_2 {
+    padding: 0%; 
 }
 #detail_image {
-    width: 92%;
+    width: 90%;
 }
 #detail_thumbnail {
-    width: 14.2%;
-    margin: 1% 1% 0 0;
+    width: 22%;
+    margin: 2% 1% 1% 0;
+    background-color: none;
 }
 #detail_thumbnail_2 {
-    width: 14.2%;
-    margin: 1% 0 0 0;
+    width: 21%;
+    margin: 0% 0 1% 0;
 }
 #column {
     padding-right: 0;
 }
 #detail_card {
-    width: 60%;
-    margin: 1% 0 0 0;
+    width: 90%;
+}
+#detail_card_2 {
+    width: 100%;
 }
 #detail_card_title {
     padding-bottom: 0px !important;
-    font-weight: 900;
+    font-weight: 900 !important;
     width: 100%;
+}
+#details_price {
+    font-family: futuraMedium !important;
+    font-weight: 900 !important;
+}
+#detail_offer {
+    font-size: 15px !important;
 }
 /*****************************
             MEDIA QUERIES 
