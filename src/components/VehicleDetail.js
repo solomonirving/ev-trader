@@ -46,19 +46,19 @@ export default class VehicleDetail extends Component {
             <div>
                 <Container fluid id="vehicle_detail_container">
                     <Row id="main_row">
-                        <Col id="col_1"  xs={8}>
-                            <Row className="rounded shadow">
-                                <Image className="rounded shadow" id="detail_image" src={this.state.image} />
+                        <Col id="col_1" sm={12} md={8}>
+                            <Row className="rounded" id="detail_image_container">
+                                <Image className="rounded" id="detail_image" src={this.state.image} />
                             </Row>
                             
-                            <Row>
+                            <Row id="detail_image_container">
                                 <Image className="rounded mt-2" id="detail_thumbnail" src={this.state.image} />
                                 <Image className="rounded mt-2" id="detail_thumbnail" src={this.state.image} />
                                 <Image className="rounded mt-2" id="detail_thumbnail" src={this.state.image} />
                                 <Image className="rounded mt-2" id="detail_thumbnail_2" src={this.state.image} />
                             </Row>
 
-                            <Row className="rounded">
+                            <Row className="rounded" id="detail_image_container">
                                 <Card className="rounded shadow mt-2" id="detail_card">
                                     <Card.Body className="rounded" id="detail_card_title"> Sellers info</Card.Body>
                                     <Card.Body className="rounded">{this.state.details.seller_name}</Card.Body>   
@@ -66,15 +66,15 @@ export default class VehicleDetail extends Component {
                                 </Card>
                             </Row>
 
-                            <Row>
-                                <Card className="rounded shadow mt-2" id="detail_card">
+                            <Row id="detail_image_container">
+                                <Card className="rounded shadow mt-2 mb-2" id="detail_card">
                                     <Card.Body className="rounded" id="detail_card_title">Description</Card.Body>
                                     <Card.Body className="rounded">{this.state.details.description}</Card.Body>
                                 </Card>
                             </Row>
                         </Col>
 
-                        <Col id="col_2" xs={4}>
+                        <Col id="col_2" md={4} sm={12}>
                             <Card className="rounded shadow" id="detail_card_2">
                                 <Card.Body className="rounded" id="detail_card_title">Sellers Price</Card.Body>
                                 <Card.Body id="details_price" className="rounded h1 pt-0">${this.state.details.price}</Card.Body>
@@ -84,21 +84,21 @@ export default class VehicleDetail extends Component {
                                 
                                 <div className="bg-white d-flex justify-content-center">
                                     <Form className="rounded bg-white"> 
-                                        <Form.Group className="bg-white" controlId="formBasicEmail">
-                                            <Form.Control className="bg-light w-100 border-0" type="email" placeholder="Name" />
+                                        <Form.Group className="bg-white"  controlId="formBasicEmail">
+                                            <Form.Control className="bg-light w-100 border-0" id="detail_form" type="email" placeholder="Name" />
                                         </Form.Group>
 
                                         <Form.Group className="bg-white" controlId="formBasicPassword">
-                                            <Form.Control className="bg-light w-100 border-0" type="email" placeholder="Email" />
+                                            <Form.Control className="bg-light w-100 border-0" id="detail_form" type="email" placeholder="Email" />
                                         </Form.Group>
 
                                         <Form.Group className="bg-white d-flex justify-content-end" controlId="formBasicPassword">
                                         <Form.Label id="detail_offer" className="bg-white font-weight-bold pr-1 align-self-center ">Offer Amount</Form.Label>
-                                            <Form.Control className="bg-light w-50 align-self-end ml-4 border-0" type="password" placeholder="$0.00" />
+                                            <Form.Control className="bg-light w-50 align-self-end ml-4 border-0" id="detail_form" type="password" placeholder="$0.00" />
                                         </Form.Group>
 
                                         <Form.Group className="bg-white" controlId="formBasicPassword">
-                                            <Form.Control className="align-self-end bg-light w-100 border-0"  type="password" placeholder="Notes" />
+                                            <Form.Control className="align-self-end bg-light w-100 border-0" id="detail_form" type="password" placeholder="Notes" />
                                         </Form.Group>
 
                                         <Button id="detail_submit" className="align-self-end badge-pill mb-3 w-100 border-0" variant="primary" type="submit">
