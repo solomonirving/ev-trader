@@ -35,7 +35,7 @@ export default class Home extends Component {
             <div className="home-main">
                 <div className="home">
                     <div className="home-title">
-                        <p className="newest-listings"><b>Newest Listings</b></p>
+                        <h5 className="newest-listings"><b>Newest Listings</b></h5>
                     </div>
                 </div>
 
@@ -44,7 +44,7 @@ export default class Home extends Component {
                             <div key={ev.uid}>
                                 <Link to ={`/vehicle_detail/${ev.uid}`} style={{ textDecoration: 'none', color: 'rgb(113, 113, 113)' }}>
                                     <div className="home-cards">
-                                        <Card className="cards shadow mb-5 bg-white rounded">
+                                        <Card className="cards shadow mb-3 bg-white rounded">
                                             <Card.Img variant="top" src={ev.images[0].url} className=".img-fluid rounded-top" />
                                             <Card.Body className="card-body rounded-bottom">
                                                 <Card.Title className="card-title">{ev.make}</Card.Title>

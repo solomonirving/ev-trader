@@ -15,7 +15,7 @@
             HEADER 
 *****************************/
 #header-input {
-    width: 300px !important;
+    width: 400px !important;
 }
 .nav-bar {
     background: rgb(239, 239, 239);
@@ -48,29 +48,36 @@
 }
 .img-fluid{
     width: 150px !important;
-    padding-left: 15px;
+    padding-left: 0px;
 }
 #logInButton{
     background-color: none !important;
     border: rgb(96, 127, 156) !important;
-    padding: 3px 15px !important;
+    padding: 0px !important;
     font-family: futuraLight !important;
     cursor: pointer;
+    width: 60px !important;
+    letter-spacing: 1px;
 }
 #listMyCar{
     background-color: none !important;
     border: rgb(96, 127, 156) !important;
-    padding: 3px 15px !important;
+    padding: 0 0 0 10px !important;
     font-family: futuraMedium !important;
     cursor: pointer;
 }
-.d-flex {
+#header_container {
     font-family: futuraLight !important;
+    padding-top: 15px !important;
 }
 #detail_submit { 
     background-color: rgb(96, 127, 156);
 }
+#list-my-vehicle {
+    width: 90px !important;
+    letter-spacing: 1px;
 
+}
 /*****************************
             MODAL 
 *****************************/
@@ -171,9 +178,16 @@ button.close {
 .nav-link {
     color: rgb(113, 113, 113);
     font-family: futuraLight !important;
+    padding-left: 0% !important;
+    width: 60px !important;
+    text-align: center !important;
+    padding: 0 !important;
 }
 .navbar-toggler {
     background-color: rgb(96, 127, 156) !important;
+}
+.btn-group {
+    overflow-wrap: normal;
 }
 /*****************************
             HOME 
@@ -185,7 +199,7 @@ button.close {
     overflow: hidden;
 }
 .home {
-    padding-left: 30px;
+    padding-left: 15px;
 }
 .home-title {
     color: rgb(96, 127, 156);
@@ -199,7 +213,7 @@ button.close {
     padding: 10px 20px 10px 20px !important;
 }
 .card {
-    width: 80%;
+    width: 90%;
 }
 .card-title {
     font-size: 15px !important;
@@ -226,9 +240,9 @@ button.close {
 .contain {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    column-gap: 1px;
+    column-gap: 0px;
     row-gap: 5px;
-    margin: 0px 100px 0px 25px !important;
+    margin: 0px 0px 0px 1.2% !important;
     width: 100%;
 }
 
@@ -281,6 +295,7 @@ button.close {
 #details_price {
     font-family: futuraMedium !important;
     font-weight: 900 !important;
+    padding: 0 0 0 25% !important;
 }
 #detail_offer {
     font-size: 15px !important;
@@ -296,9 +311,10 @@ button.close {
 .detail_box {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: left;
     background-color: fff !important;
 }
+
 /*****************************
             MEDIA QUERIES 
 *****************************/
@@ -347,7 +363,14 @@ button.close {
     }
     #logInButton {
         padding-left: 0 !important;
+        margin: 0 !important;
+        width: 100%;
         background-color: white !important;
+    }
+    .nav-link {
+        width: 50px !important;
+        font-size: 10px !important;
+        padding: 0 !important;
     }
     .navbar-collapse {
         display: flex;

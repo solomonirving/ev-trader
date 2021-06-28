@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Container, Col, Image, Row, Card, Form, Button } from 'react-bootstrap'
-// import {map} from '@fortawesome/free-solid-svg-icons'
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { alarm } from 'react-bootstrap-icons';
 
 export default class VehicleDetail extends Component {
     constructor(props) {
@@ -62,7 +61,7 @@ export default class VehicleDetail extends Component {
                                 <Card className="rounded shadow mt-2 mb-2 bg-white py-3" id="detail_card">
                                     <div className="detail_box bg-white">
                                     <div className="bg-white">
-                                        <div className="rounded bg-white p-1" id="detail_card_title">Sellers Info</div>
+                                        <div className="rounded bg-white p-1" id="detail_card_title"><alarm /> Sellers Info</div>
                                         <div className="rounded bg-white p-1">{this.state.details.seller_name}</div>   
                                         <div className="rounded bg-white p-1 ">{this.state.location_city}, {this.state.location_state}</div> 
                                     </div> 
@@ -90,7 +89,7 @@ export default class VehicleDetail extends Component {
                         <Col id="col_2" md={4} sm={12}>
                             <Card className="rounded shadow" id="detail_card_2">
                                 <Card.Body className="rounded" id="detail_card_title">Sellers Price</Card.Body>
-                                <Card.Body id="details_price" className="rounded h1 pt-0">${this.state.details.price}</Card.Body>
+                                    <Card.Body id="details_price" className="rounded h1 pt-0">${this.state.details.price}</Card.Body>
                             </Card>
                             <Card className="rounded shadow mt-2" id="detail_card_2">
                                 <Card.Body className="rounded mb-2 pl-4" id="detail_card_title">Make An Offer</Card.Body>

@@ -48,7 +48,7 @@ export default class Header extends Component {
         return (
             <div className="nav-bar align-text-bottom">
 
-                <Navbar className="d-flex" expand= "md">
+                <Navbar className="d-flex" id="header_container" expand= "md">
                     <div className="mr-auto p3">
                     <Link to ={`/`} style={{ textDecoration: 'none', color: 'rgb(113, 113, 113)' }}>
                         <Card.Img variant="top" src={this.state.companyLogo} alt="/" className="img-fluid" />
@@ -56,15 +56,17 @@ export default class Header extends Component {
                     </div>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse  className="navbar-collapse" >
-                    <Nav className="mr-auto my-2 my-lg-0" id="navbar-scroll" style={{ maxHeight: '100px' }} navbarScroll>
-                        <div className="rounded ">
+                    <Nav className="mr-auto my-2 my-lg-0" id="navbar-scroll" style={{ maxHeight: '100px' }}>
+                        <div className="rounded">
                             <Form inline>
-                                <FormControl id="header-input" type="text" placeholder="Search for Car..." className="mr-lg-2 border-0" />
+                                <FormControl id="header-input" type="text" placeholder="Search for Car..." className="mr-2 border-0" />
                             </Form>
                         </div>
                         <Modals />                        
                         <div className="p2 pr-3" id="listMyCar">
-                            <p className="nav-bar-text mr-auto" id="list-my-vehicle">{this.state.heading}</p>
+                            {/* <p className="nav-bar-text mr-auto" id="list-my-vehicle">{this.state.heading}</p> */}
+                            <button type="button" class="btn btn-sm btn-light nav-link" id="list-my-vehicle">{this.state.heading}</button>
+
                         </div>
       
                         {/* {this.state.categories.map(ev => (
