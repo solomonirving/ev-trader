@@ -288,6 +288,16 @@ button.close {
 #detail_form{
     background-color: rgb(239, 239, 239) !important;
     opacity: 50%;
+    width: 50%;
+}
+#detail_container {
+    width: 90%;
+}
+.detail_box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    background-color: fff !important;
 }
 /*****************************
             MEDIA QUERIES 

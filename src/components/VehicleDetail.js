@@ -59,20 +59,33 @@ export default class VehicleDetail extends Component {
                             </Row>
 
                             <Row className="rounded" id="detail_image_container">
-                                <Card className="rounded shadow mt-2" id="detail_card">
-                                    <Card.Body className="rounded" id="detail_card_title"> Sellers info</Card.Body>
-                                    <Card.Body className="rounded">{this.state.details.seller_name}</Card.Body>   
-                                    <Card.Body className="rounded">{this.state.location_city}, {this.state.location_state}</Card.Body>
+                                <Card className="rounded shadow mt-2 mb-2 bg-white py-3" id="detail_card">
+                                    <div className="detail_box bg-white">
+                                    <div className="bg-white">
+                                        <div className="rounded bg-white p-1" id="detail_card_title">Sellers Info</div>
+                                        <div className="rounded bg-white p-1">{this.state.details.seller_name}</div>   
+                                        <div className="rounded bg-white p-1 ">{this.state.location_city}, {this.state.location_state}</div> 
+                                    </div> 
+                                    <div className="bg-white">
+                                        <div className="rounded bg-white p-1" id="detail_card_title">Vehicle Details</div>
+                                        <div className="rounded bg-white p-1"><b className="detail_bold bg-white pr-1 mr-4">VIN</b>{this.state.details.vin}</div>   
+                                        <div className="rounded bg-white p-1"><b className="detail_bold bg-white mr-4">Year</b> {this.state.details.year}</div>   
+                                        <div className="rounded bg-white p-1"><b className="detail_bold bg-white mr-3">Make</b> {this.state.details.make}</div>   
+                                        <div className="rounded bg-white p-1"><b className="detail_bold bg-white mr-2">Model</b> {this.state.details.model}</div>   
+                                        <div className="rounded bg-white p-1"><b className="detail_bold bg-white mr-3">Miles</b> {this.state.details.odometer}</div>   
+                                    </div>
+                                    </div>
                                 </Card>
+                                         
                             </Row>
-
+                                            
                             <Row id="detail_image_container">
                                 <Card className="rounded shadow mt-2 mb-2" id="detail_card">
                                     <Card.Body className="rounded" id="detail_card_title">Description</Card.Body>
                                     <Card.Body className="rounded">{this.state.details.description}</Card.Body>
                                 </Card>
                             </Row>
-                        </Col>
+                        </Col> 
 
                         <Col id="col_2" md={4} sm={12}>
                             <Card className="rounded shadow" id="detail_card_2">
@@ -83,7 +96,7 @@ export default class VehicleDetail extends Component {
                                 <Card.Body className="rounded mb-2 pl-4" id="detail_card_title">Make An Offer</Card.Body>
                                 
                                 <div className="bg-white d-flex justify-content-center">
-                                    <Form className="rounded bg-white"> 
+                                    <Form className="rounded bg-white" id="detail_container"> 
                                         <Form.Group className="bg-white"  controlId="formBasicEmail">
                                             <Form.Control className="bg-light w-100 border-0" id="detail_form" type="email" placeholder="Name" />
                                         </Form.Group>
