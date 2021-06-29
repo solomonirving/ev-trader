@@ -23,6 +23,7 @@ export default class Category extends Component {
         const data = await response.json()
             this.setState({headers: data.entries})
             // console.log(data.entries)
+        
     }
 
     render() {

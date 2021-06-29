@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Category from './Category';
 import { Link } from "react-router-dom";
 import { Card } from 'react-bootstrap';
 
@@ -27,10 +28,23 @@ export default class Home extends Component {
         const response = await fetch(url, requestOptions)
         const data = await response.json()
             this.setState({vehicle: data.entries})
-            // console.log(data.entries)
+            console.log(data.entries)
+
+    }
+    changeView(event){
+        let clickStatus = event.target.value
+        this.setState({
+            completedFilter: clickStatus === 'completed' ? true : false
+        })
     }
 
+
     render() { 
+        let filteredItems = this.state.vehicle;
+            if (this.state.completedFilter) {
+                filteredItems = this.state.list.filter((item) => item.completed);
+            }
+    
         return (
             <div className="home-main">
                 <div className="home">
@@ -38,9 +52,12 @@ export default class Home extends Component {
                         <h5 className="newest-listings"><b>Newest Listings</b></h5>
                     </div>
                 </div>
-
+            <Category onClick={event => {this.state.vehicle(event.target.value)}}/>
+ 
                     <div className="contain">                                        
-                        {this.state.vehicle.map(ev => (
+                        {/* {this.state.vehicle.map(ev => ( */}
+                            {filteredItems.map(ev => (
+                        
                             <div key={ev.uid}>
                                 <Link to ={`/vehicle_detail/${ev.uid}`} style={{ textDecoration: 'none', color: 'rgb(113, 113, 113)' }}>
                                     <div className="home-cards">

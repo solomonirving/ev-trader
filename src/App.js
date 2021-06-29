@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/Home";
-import Category from "./components/Category";
+import ListMyCar from "./components/ListMyCar";
 import Header from "./components/Header";
 import VehicleDetail from "./components/VehicleDetail";
 import "./App.css";
@@ -12,10 +12,10 @@ function App() {
     <div className="App">
       <Router>
       <Header />
-      <Category />
           <Switch>
             <Route exact path="/" component={ Home }/>
             <Route path="/vehicle_detail/:id" component={ VehicleDetail } />
+            <Route path="/list_my_car/" component={ ListMyCar } />
           </Switch>
       </Router>
     </div>

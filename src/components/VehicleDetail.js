@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Container, Col, Image, Row, Card, Form, Button } from 'react-bootstrap'
+import Category from "./Category"
 import { alarm } from 'react-bootstrap-icons';
 
 export default class VehicleDetail extends Component {
@@ -43,6 +44,7 @@ export default class VehicleDetail extends Component {
     render() {
         return (
             <div>
+                <Category />
                 <Container fluid id="vehicle_detail_container">
                     <Row id="main_row">
                         <Col id="col_1" sm={12} md={8}>
