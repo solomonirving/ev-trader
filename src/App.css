@@ -194,7 +194,7 @@ button.close {
     width: 60px !important;
     text-align: center !important;
     padding: 0 !important;
-    height: 40px;
+    height: 38px !important;
 }
 .navbar-toggler {
     background-color: rgb(96, 127, 156) !important;
