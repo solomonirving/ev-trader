@@ -56,8 +56,8 @@ export default class Header extends Component {
                     </div>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse  className="navbar-collapse" >
-                    <Nav className="mr-auto my-2 my-lg-0" id="navbar-scroll" style={{ maxHeight: '100px' }}>
-                        <div className="rounded">
+                    <Nav className="mr-auto my-2 my-lg-0 justify-content-end" id="navbar-scroll" style={{ maxHeight: '200px' }}>
+                        <div className="rounded" id="rounded_2">
                             <Form inline>
                                 <FormControl id="header-input" type="text" placeholder="Search for Car..." className="mr-2 border-0" />
                             </Form>
@@ -66,7 +66,6 @@ export default class Header extends Component {
                         <div className="p2 pr-3" id="listMyCar">
                             {/* <p className="nav-bar-text mr-auto" id="list-my-vehicle">{this.state.heading}</p> */}
                             <button type="button" class="btn btn-block btn-light nav-link-2" id="list-my-vehicle">{this.state.heading}</button>
-
                         </div>
       
                         {/* {this.state.categories.map(ev => (

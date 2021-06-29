@@ -45,11 +45,7 @@ export default class Modals extends Component {
     render() {
         return (
         <>
-            {/* <p className="p2" id="logInButton" type="button" size="sm rounded-pill" onClick={this.openModal}>Log In</Button>  */}
-            {/* <p className="nav-bar-text mr-auto" id="logInButton" onClick={this.openModal}>{this.state.heading}</p> */}
             <button type="button" class="btn btn-block btn-light nav-link-2"id="logInButton" onClick={this.openModal}>{this.state.heading}</button>
-
-            
             <div className="modal-container">
               <Modal className="modal-dialog-centered" id="modal" show={this.state.isOpen} onHide={this.closeModal}>
                 <Modal.Header closeButton className="modal-header">
@@ -57,12 +53,12 @@ export default class Modals extends Component {
                 <Modal.Body>
                 <Modal.Title className="modal-title">Sign into account</Modal.Title>
 
-                  <div className="ml-auto rounded ">
+                  <div className="ml-auto rounded" id="modal_buttons">
                       <Form inline id="modalForm">
                           <FormControl type="text" id="modalInput" placeholder="Username" className="mr-sm-2 border-1" />
                       </Form>
                   </div>
-                  <div className="ml-auto rounded ">
+                  <div className="ml-auto rounded" id="modal_buttons">
                       <Form inline id="modalForm" >
                           <FormControl type="text" id="modalInput" placeholder="Password" className="mr-sm-2 border-1" />
                       </Form>

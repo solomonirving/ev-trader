@@ -60,12 +60,12 @@ export default class VehicleDetail extends Component {
                             <Row className="rounded" id="detail_image_container">
                                 <Card className="rounded shadow mt-2 mb-2 bg-white py-3" id="detail_card">
                                     <div className="detail_box bg-white">
-                                    <div className="bg-white">
+                                    <div className="bg-white pl-3">
                                         <div className="rounded bg-white p-1" id="detail_card_title"><alarm /> Sellers Info</div>
                                         <div className="rounded bg-white p-1">{this.state.details.seller_name}</div>   
                                         <div className="rounded bg-white p-1 ">{this.state.location_city}, {this.state.location_state}</div> 
                                     </div> 
-                                    <div className="bg-white">
+                                    <div className="bg-white pl-4">
                                         <div className="rounded bg-white p-1" id="detail_card_title">Vehicle Details</div>
                                         <div className="rounded bg-white p-1"><b className="detail_bold bg-white pr-1 mr-4">VIN</b>{this.state.details.vin}</div>   
                                         <div className="rounded bg-white p-1"><b className="detail_bold bg-white mr-4">Year</b> {this.state.details.year}</div>   
