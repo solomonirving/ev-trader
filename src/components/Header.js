@@ -65,7 +65,7 @@ export default class Header extends Component {
                         <Modals />                        
                         <div className="p2 pr-3" id="listMyCar">
                             {/* <p className="nav-bar-text mr-auto" id="list-my-vehicle">{this.state.heading}</p> */}
-                            <button type="button" class="btn btn-sm btn-light nav-link" id="list-my-vehicle">{this.state.heading}</button>
+                            <button type="button" class="btn btn-block btn-light nav-link-2" id="list-my-vehicle">{this.state.heading}</button>
 
                         </div>
       

@@ -47,7 +47,7 @@ export default class Modals extends Component {
         <>
             {/* <p className="p2" id="logInButton" type="button" size="sm rounded-pill" onClick={this.openModal}>Log In</Button>  */}
             {/* <p className="nav-bar-text mr-auto" id="logInButton" onClick={this.openModal}>{this.state.heading}</p> */}
-            <button type="button" class="btn btn-block btn-light nav-link"id="logInButton" onClick={this.openModal}>{this.state.heading}</button>
+            <button type="button" class="btn btn-block btn-light nav-link-2"id="logInButton" onClick={this.openModal}>{this.state.heading}</button>
 
             
             <div className="modal-container">

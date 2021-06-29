@@ -176,12 +176,21 @@ button.close {
             NAV 
 *****************************/
 .nav-link {
-    color: rgb(113, 113, 113);
+    color: rgb(113, 113, 113) !important;
     font-family: futuraLight !important;
     padding-left: 0% !important;
     width: 60px !important;
     text-align: center !important;
     padding: 0 !important;
+}
+.nav-link-2 {
+    color: rgb(113, 113, 113) !important;
+    font-family: futuraLight !important;
+    /* padding-left: 0% !important; */
+    width: 60px !important;
+    text-align: center !important;
+    padding: 0 !important;
+    height: 40px;
 }
 .navbar-toggler {
     background-color: rgb(96, 127, 156) !important;
@@ -424,5 +433,11 @@ button.close {
      align-items: center !important;
      flex-direction: column !important;
      justify-content: center !important;   
+    }
+    #latest {
+    margin-left: .5rem !important;
+    }
+    .nav-link {
+        width: 35px !important;
     }
   }

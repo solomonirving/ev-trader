@@ -30,7 +30,7 @@ export default class Category extends Component {
             <div>
                 <Navbar>
                     <div class="btn-group" role="group" id="basic-navbar-nav">
-                        <button type="button" class="btn btn-block btn-light mr-1 nav-link">Latest</button>
+                        <button type="button" class="btn btn-block btn-light mr-1 nav-link" id="latest">Latest</button>
 
                         {this.state.headers.map(ev => (
                                 <Nav key={ev.uid} >    
