@@ -48,7 +48,7 @@ export default class VehicleDetail extends Component {
                 <Container fluid id="vehicle_detail_container">
                     <Row id="main_row">
                         <Col id="col_1" sm={12} md={8}>
-                            <Row className="rounded" id="detail_image_container">
+                            <Row className="rounded mt-2" id="detail_image_container">
                                 <Image className="rounded" id="detail_image" src={this.state.image} />
                             </Row>
                             
@@ -89,11 +89,11 @@ export default class VehicleDetail extends Component {
                         </Col> 
 
                         <Col id="col_2" md={4} sm={12}>
-                            <Card className="rounded shadow" id="detail_card_2">
+                            <Card className="rounded shadow mt-2" id="detail_card_2">
                                 <Card.Body className="rounded" id="detail_card_title">Sellers Price</Card.Body>
                                     <Card.Body id="details_price" className="rounded h1 pt-0">${this.state.details.price}</Card.Body>
                             </Card>
-                            <Card className="rounded shadow mt-2" id="detail_card_2">
+                            <Card className="rounded shadow mt-3" id="detail_card_2">
                                 <Card.Body className="rounded mb-2 pl-4" id="detail_card_title">Make An Offer</Card.Body>
                                 
                                 <div className="bg-white d-flex justify-content-center">
