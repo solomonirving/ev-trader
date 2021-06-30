@@ -31,12 +31,11 @@ export default class Category extends Component {
             <div>
                 <Navbar id="category_items">
                     <div class="btn-group" role="group" id="basic-navbar-nav">
-                        <button type="button" class="btn btn-block btn-light mr-1 nav-link" id="latest">Latest</button>
-
+                        <button type="button" class="btn btn-block btn-light mr-2 mb-1 mt-2 nav-link" id="latest">Latest</button>
                         {this.state.headers.map(ev => (
-                                <Nav key={ev.uid} >    
-                                    <button type="button" class="btn btn-block btn-light mr-1 nav-link">{ev.title}</button>
-                                </Nav>
+                            <Nav key={ev.uid} >    
+                                <button type="button" class="btn btn-block btn-light mr-2 mb-1 mt-2 nav-link">{ev.title}</button>
+                            </Nav>
                         ))}
                     </div>
                 </Navbar>

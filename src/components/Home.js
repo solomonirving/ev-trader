@@ -47,12 +47,13 @@ export default class Home extends Component {
     
         return (
             <div className="home-main">
+            <Category onClick={event => {this.state.vehicle(event.target.value)}}/>
+
                 <div className="home">
                     <div className="home-title">
                         <h5 className="newest-listings"><b>Newest Listings</b></h5>
                     </div>
                 </div>
-            <Category onClick={event => {this.state.vehicle(event.target.value)}}/>
  
                     <div className="contain">                                        
                         {/* {this.state.vehicle.map(ev => ( */}
@@ -61,7 +62,7 @@ export default class Home extends Component {
                             <div key={ev.uid}>
                                 <Link to ={`/vehicle_detail/${ev.uid}`} style={{ textDecoration: 'none', color: 'rgb(113, 113, 113)' }}>
                                     <div className="home-cards">
-                                        <Card className="cards shadow mb-3 bg-white rounded">
+                                        <Card className="cards shadow mb-3 border-0 bg-white rounded">
                                             <Card.Img variant="top" src={ev.images[0].url} className=".img-fluid rounded-top" />
                                             <Card.Body className="card-body rounded-bottom">
                                                 <Card.Title className="card-title">{ev.make}</Card.Title>
@@ -73,7 +74,7 @@ export default class Home extends Component {
                                                     , {ev.location.state}
                                                 </Card.Text>
                                                 <div className="card-text-price">
-                                                    <Card.Text className="card-text">
+                                                    <Card.Text className="card-text" id="card-price">
                                                         ${ev.price}
                                                     </Card.Text>
                                                 </div> 

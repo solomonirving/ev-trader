@@ -47,7 +47,6 @@ export default class Header extends Component {
 
         return (
             <div className="nav-bar align-text-bottom">
-
                 <Navbar className="d-flex" id="header_container" expand= "md">
                     <div className="mr-auto p3">
                     <Link to ={`/`} style={{ textDecoration: 'none', color: 'rgb(113, 113, 113)' }}>
@@ -58,22 +57,16 @@ export default class Header extends Component {
                     <Navbar.Collapse  className="navbar-collapse" >
                     <Nav className="mr-auto my-2 my-lg-0 justify-content-end" id="navbar-scroll" style={{ maxHeight: '200px' }}>
                         <div className="rounded" id="rounded_2">
-                            <Form inline>
+                            <Form inline className="search">
                                 <FormControl id="header-input" type="text" placeholder="Search for Car..." className="mr-2 border-0" />
                             </Form>
                         </div>
-                        <Modals />                        
-                        <div className="p2 pr-3" id="listMyCar">
+                        <div className="p5 mr-2 " id="listMyCar">
                             <Link to ={`/list_my_car/`} style={{ textDecoration: 'none', color: 'rgb(113, 113, 113)' }}>
-                            <button type="button" class="btn btn-block btn-light nav-link-2" id="list-my-vehicle">{this.state.heading}</button>
+                                <button type="button" class="btn btn-block btn-light nav-link-2" id="list-my-vehicle">{this.state.heading}</button>
                             </Link>
                         </div>
-      
-                        {/* {this.state.categories.map(ev => (
-                            <div key={ev.uid}>
-                                <p>{ev.title}</p>
-                            </div>
-                        ))} */}
+                        <Modals />                        
                     </Nav>
                     </Navbar.Collapse> 
                 </Navbar> 

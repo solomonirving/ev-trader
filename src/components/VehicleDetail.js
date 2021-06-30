@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import { Container, Col, Image, Row, Card, Form, Button } from 'react-bootstrap'
-import Category from "./Category"
-import { alarm } from 'react-bootstrap-icons';
+// import Category from "./Category"
+// import { IoPersonOutline } from 'react-icons/fa';
+import { IoPersonOutline, IoLocationOutline } from "react-icons/io5";
 
 export default class VehicleDetail extends Component {
     constructor(props) {
@@ -44,12 +45,12 @@ export default class VehicleDetail extends Component {
     render() {
         return (
             <div>
-                <Category />
+                {/* <Category /> */}
                 <Container fluid id="vehicle_detail_container">
                     <Row id="main_row">
                         <Col id="col_1" sm={12} md={8}>
                             <Row className="rounded mt-2" id="detail_image_container">
-                                <Image className="rounded" id="detail_image" src={this.state.image} />
+                                <Image className="rounded border-0" id="detail_image" src={this.state.image} />
                             </Row>
                             
                             <Row id="detail_image_container">
@@ -60,20 +61,20 @@ export default class VehicleDetail extends Component {
                             </Row>
 
                             <Row className="rounded" id="detail_image_container">
-                                <Card className="rounded shadow mt-2 mb-2 bg-white py-3" id="detail_card">
+                                <Card className="rounded shadow mt-2  border-0 mb-2 bg-white py-3" id="detail_card">
                                     <div className="detail_box bg-white">
                                     <div className="bg-white pl-3">
                                         <div className="rounded bg-white p-1" id="detail_card_title"><alarm /> Sellers Info</div>
-                                        <div className="rounded bg-white p-1">{this.state.details.seller_name}</div>   
-                                        <div className="rounded bg-white p-1 ">{this.state.location_city}, {this.state.location_state}</div> 
+                                        <div className="rounded bg-white p-1 detail-text"><IoPersonOutline /> {this.state.details.seller_name}</div>   
+                                        <div className="rounded bg-white p-1 detail-text"><IoLocationOutline /> {this.state.location_city}, {this.state.location_state}</div> 
                                     </div> 
                                     <div className="bg-white pl-4">
                                         <div className="rounded bg-white p-1" id="detail_card_title">Vehicle Details</div>
-                                        <div className="rounded bg-white p-1"><b className="detail_bold bg-white pr-1 mr-4">VIN</b>{this.state.details.vin}</div>   
-                                        <div className="rounded bg-white p-1"><b className="detail_bold bg-white mr-4">Year</b> {this.state.details.year}</div>   
-                                        <div className="rounded bg-white p-1"><b className="detail_bold bg-white mr-3">Make</b> {this.state.details.make}</div>   
-                                        <div className="rounded bg-white p-1"><b className="detail_bold bg-white mr-2">Model</b> {this.state.details.model}</div>   
-                                        <div className="rounded bg-white p-1"><b className="detail_bold bg-white mr-3">Miles</b> {this.state.details.odometer}</div>   
+                                        <div className="rounded bg-white p-1 detail-text"><b className="detail_bold bg-white pr-1 mr-4">VIN</b>{this.state.details.vin}</div>   
+                                        <div className="rounded bg-white p-1 detail-text"><b className="detail_bold bg-white mr-4">Year</b> {this.state.details.year}</div>   
+                                        <div className="rounded bg-white p-1 detail-text"><b className="detail_bold bg-white mr-3">Make</b> {this.state.details.make}</div>   
+                                        <div className="rounded bg-white p-1 detail-text"><b className="detail_bold bg-white mr-2">Model</b> {this.state.details.model}</div>   
+                                        <div className="rounded bg-white p-1 detail-text"><b className="detail_bold bg-white mr-3">Miles</b> {this.state.details.odometer}</div>   
                                     </div>
                                     </div>
                                 </Card>
@@ -81,19 +82,19 @@ export default class VehicleDetail extends Component {
                             </Row>
                                             
                             <Row id="detail_image_container">
-                                <Card className="rounded shadow mt-2 mb-2" id="detail_card">
+                                <Card className="rounded border-0 shadow mt-2 mb-2" id="detail_card">
                                     <Card.Body className="rounded" id="detail_card_title">Description</Card.Body>
-                                    <Card.Body className="rounded">{this.state.details.description}</Card.Body>
+                                    <Card.Body className="rounded" id="detail_description">{this.state.details.description}</Card.Body>
                                 </Card>
                             </Row>
                         </Col> 
 
                         <Col id="col_2" md={4} sm={12}>
-                            <Card className="rounded shadow mt-2" id="detail_card_2">
+                            <Card className="rounded shadow border-0 mt-2" id="detail_card_2">
                                 <Card.Body className="rounded" id="detail_card_title">Sellers Price</Card.Body>
-                                    <Card.Body id="details_price" className="rounded h1 pt-0">${this.state.details.price}</Card.Body>
+                                    <Card.Body id="details_price" className="rounded h2 mb-2 pt-0">${this.state.details.price}</Card.Body>
                             </Card>
-                            <Card className="rounded shadow mt-3" id="detail_card_2">
+                            <Card className="rounded shadow border-0 mt-3" id="detail_card_2">
                                 <Card.Body className="rounded mb-2 pl-4" id="detail_card_title">Make An Offer</Card.Body>
                                 
                                 <div className="bg-white d-flex justify-content-center">
@@ -106,7 +107,7 @@ export default class VehicleDetail extends Component {
                                             <Form.Control className="bg-light w-100 border-0" id="detail_form" type="email" placeholder="Email" />
                                         </Form.Group>
 
-                                        <Form.Group className="bg-white d-flex justify-content-end" controlId="formBasicPassword">
+                                        <Form.Group className="bg-white d-flex justify-content-start" controlId="formBasicPassword">
                                         <Form.Label id="detail_offer" className="bg-white font-weight-bold pr-1 align-self-center ">Offer Amount</Form.Label>
                                             <Form.Control className="bg-light w-50 align-self-end ml-4 border-0" id="detail_form" type="password" placeholder="$0.00" />
                                         </Form.Group>
