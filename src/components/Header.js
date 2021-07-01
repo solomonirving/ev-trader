@@ -63,7 +63,7 @@ export default class Header extends Component {
                         </div>
                         <div className="p5 mr-2 " id="listMyCar">
                             <Link to ={`/list_my_car/`} style={{ textDecoration: 'none', color: 'rgb(113, 113, 113)' }}>
-                                <button type="button" class="btn btn-block btn-light nav-link-2" id="list-my-vehicle">{this.state.heading}</button>
+                                <button type="button" className="btn btn-block btn-light nav-link-2" id="list-my-vehicle">{this.state.heading}</button>
                             </Link>
                         </div>
                         <Modals />                        

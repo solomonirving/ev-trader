@@ -39,7 +39,7 @@ export default class VehicleDetail extends Component {
                             location_city: data.entry.location.city,
                             location_state: data.entry.location.state,
                         })
-            console.log(data.entry)
+            // console.log(data.entry)
     }
 
     render() {
@@ -54,17 +54,17 @@ export default class VehicleDetail extends Component {
                             </Row>
                             
                             <Row id="detail_image_container">
-                                <Image className="rounded mt-2" id="detail_thumbnail" src={this.state.image} />
-                                <Image className="rounded mt-2" id="detail_thumbnail" src={this.state.image} />
-                                <Image className="rounded mt-2" id="detail_thumbnail" src={this.state.image} />
-                                <Image className="rounded mt-2" id="detail_thumbnail_2" src={this.state.image} />
+                                <Image className="rounded mt-2 detail_thumbnail" src={this.state.image} />
+                                <Image className="rounded mt-2 detail_thumbnail" src={this.state.image} />
+                                <Image className="rounded mt-2 detail_thumbnail" src={this.state.image} />
+                                <Image className="rounded mt-2 detail_thumbnail" id="detail_thumbnail_2" src={this.state.image} />
                             </Row>
 
                             <Row className="rounded" id="detail_image_container">
                                 <Card className="rounded shadow mt-2  border-0 mb-2 bg-white py-3" id="detail_card">
                                     <div className="detail_box bg-white">
                                     <div className="bg-white pl-3">
-                                        <div className="rounded bg-white p-1" id="detail_card_title"><alarm /> Sellers Info</div>
+                                        <div className="rounded bg-white p-1" id="detail_card_title">Sellers Info</div>
                                         <div className="rounded bg-white p-1 detail-text"><IoPersonOutline /> {this.state.details.seller_name}</div>   
                                         <div className="rounded bg-white p-1 detail-text"><IoLocationOutline /> {this.state.location_city}, {this.state.location_state}</div> 
                                     </div> 

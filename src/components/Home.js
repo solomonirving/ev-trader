@@ -8,7 +8,8 @@ export default class Home extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            vehicle: [], 
+            vehicle: [],
+            filter: [], 
         }
     }
     
@@ -18,7 +19,6 @@ export default class Home extends Component {
         var myHeaders = new Headers();
             myHeaders.append("api_key", API_KEY);
             myHeaders.append("access_token", DELIVERY_TOKEN);
-
         var requestOptions = {
             method: 'GET',
             headers: myHeaders,
@@ -28,27 +28,27 @@ export default class Home extends Component {
         const response = await fetch(url, requestOptions)
         const data = await response.json()
             this.setState({vehicle: data.entries})
-            console.log(data.entries)
-
+            // console.log(data.entries)
     }
-    changeView(event){
-        let clickStatus = event.target.value
-        this.setState({
-            completedFilter: clickStatus === 'completed' ? true : false
-        })
-    }
-
-
-    render() { 
-        let filteredItems = this.state.vehicle;
-            if (this.state.completedFilter) {
-                filteredItems = this.state.list.filter((item) => item.completed);
-            }
     
+
+    // async componentDidUpdate(e) {
+    //     const newvar = e.target.innerHTML
+    //         console.log(newvar)
+    // // const url = "https://cdn.contentstack.io/v3/content_types/copy_of_vehicle_listing/entries?environment=development&query={\"make\": \"Nissan\"}";
+     
+    // }
+
+    selectCategory(e) {
+        console.log(e.target.innerHTML.toString())
+    }
+        
+    render() { 
+
         return (
             <div className="home-main">
-            <Category onClick={event => {this.state.vehicle(event.target.value)}}/>
-
+                <Category onselectCategory= {this.selectCategory} />
+                
                 <div className="home">
                     <div className="home-title">
                         <h5 className="newest-listings"><b>Newest Listings</b></h5>
@@ -56,9 +56,7 @@ export default class Home extends Component {
                 </div>
  
                     <div className="contain">                                        
-                        {/* {this.state.vehicle.map(ev => ( */}
-                            {filteredItems.map(ev => (
-                        
+                            {this.state.vehicle.map(ev => (                        
                             <div key={ev.uid}>
                                 <Link to ={`/vehicle_detail/${ev.uid}`} style={{ textDecoration: 'none', color: 'rgb(113, 113, 113)' }}>
                                     <div className="home-cards">

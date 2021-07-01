@@ -293,10 +293,10 @@ button.close {
     width: 100%;
     margin: 0;
 }
-#detail_thumbnail {
+.detail_thumbnail {
     width: 22%;
     margin: 16px 1% 8px 0 !important;
-    background-color: none;
+    background-color: none; 
 }
 #detail_thumbnail_2 {
     width: 21%;
@@ -509,6 +509,7 @@ svg {
         padding-left: 0 !important;
         margin: 0 !important;
         width: 100%;
+        color: rgb(113, 113, 113) !important;
         background-color: white !important;
     }
     .nav-link {
@@ -535,7 +536,7 @@ svg {
     #detail_image {
         width: 100%;
     }
-    #detail_thumbnail {
+    .detail_thumbnail {
         width: 24.5%;
     }
     #detail_thumbnail_2 {

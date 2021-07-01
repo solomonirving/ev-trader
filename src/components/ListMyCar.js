@@ -9,7 +9,7 @@ export default class ListMyCar extends Component {
             <div>
                 {/* <Category /> */}
                 <Container fluid id="vehicle_detail_container">
-                    <Row class="justify-content-between" id="list_main_row">
+                    <Row className="justify-content-between" id="list_main_row">
                         <Col className="seller_details" id="col_1" sm={12} md={5}>
                             <Row className="rounded" id="detail_image_container">
                             <Card className="rounded border-0 shadow mt-2" id="detail_card_2">
@@ -26,12 +26,29 @@ export default class ListMyCar extends Component {
                                         <div className="vehicle_detail_cont_1">
                                         <Form.Control className="border-0 w-10" id="list_form" as="select" defaultValue="City">
                                                 <option>City</option>
-                                                <option>1</option> 
+                                                <option>Los Angeles</option>
+                                                <option>San Francisco</option>
+                                                <option>Freemont</option>
+                                                <option>San Jose</option>
+                                                <option>Walnut Creek</option>
+                                                <option>Sacramento</option>
+                                                <option>Vacaville</option>
+                                                <option>Vallejo</option>
+                                                <option>Carson City</option>
+                                                <option>Las Vegas</option> 
                                         </Form.Control>
                                         <Form.Control className="border-0 ml-5 w-10" id="list_form" as="select" defaultValue="State">
                                                 <option>State</option>
-                                                <option>1</option>
-                                        </Form.Control>
+                                                <option>CA</option>
+                                                <option>NV</option>
+                                                <option>TX</option>
+                                                <option>OR</option>
+                                                <option>FL</option>
+                                                <option>NY</option>
+                                                <option>WA</option>
+                                                <option>HA</option>
+                                                <option>VA</option>
+                                                <option>NJ</option>                                        </Form.Control>
                                         </div>
                                     </Form>
                                 </div>
@@ -42,7 +59,7 @@ export default class ListMyCar extends Component {
                                 <Card className="rounded shadow border-0 mt-3 mb-2 bg-white py-3" id="list_card">
                                     <div className="detail_box bg-white">
                                         <div className="bg-white rounded pl-3">
-                                            <div className="rounded bg-white p-1" id="detail_card_title"><alarm />Price</div>
+                                            <div className="rounded bg-white p-1" id="detail_card_title">Price</div>
                                             <Form.Group className="bg-white"  controlId="formBasicEmail">
                                             <Form.Control className="bg-light w-100 border-0" id="detail_form" type="email" placeholder="$0.00" />
                                             </Form.Group>
@@ -62,13 +79,32 @@ export default class ListMyCar extends Component {
                                             <Col className="bg-white">
                                             <Form.Control className="border-0 w-10" id="list_form" as="select" defaultValue="Year">
                                                         <option>Year</option>
-                                                        <option>1</option>
+                                                        <option>2011</option>
+                                                        <option>2012</option>
+                                                        <option>2013</option>
+                                                        <option>2014</option>
+                                                        <option>2015</option>
+                                                        <option>2016</option>
+                                                        <option>2017</option>
+                                                        <option>2018</option>
+                                                        <option>2019</option>
+                                                        <option>2020</option>
+                                                        <option>2021</option>
                                             </Form.Control>  
                                             </Col>
                                             <Col className="bg-white">
                                             <Form.Control className="border-0 w-10" id="list_form" as="select" defaultValue="Make">
                                                         <option>Make</option>
-                                                        <option>1</option>
+                                                        <option>Nissan</option>
+                                                        <option>Hyundai</option>
+                                                        <option>Ford</option>
+                                                        <option>Chevrolet</option>
+                                                        <option>BMW</option>
+                                                        <option>Audi</option>
+                                                        <option>Porsche</option>
+                                                        <option>Aptera</option>
+                                                        <option>Lucid</option>
+                                                        <option>Tesla</option>
                                             </Form.Control>
                                             </Col>
                                         </Row>
@@ -76,7 +112,7 @@ export default class ListMyCar extends Component {
 
                                         <Row className="mb-3">
                                             <Col className="bg-white"> 
-                                            <Form.Control className="bg-light w-10 border-0"  type="email" placeholder="Model" />
+                                            <Form.Control className="bg-light w-10 border-0"  id="detail_form_2" type="email" placeholder="Model" />
                                             </Col> 
                                             <Col className="bg-white">
                                             <Form.Control className="bg-light w-4 border-0" id="detail_form_2" type="email" placeholder="Color" />
@@ -100,13 +136,30 @@ export default class ListMyCar extends Component {
 
                                             <Col className="bg-white">
                                             <Card.Body className="rounded pl-0 pt-0" id="detail_card_title">Condition</Card.Body>
-
-                                                <Form.Group className="mb-3 bg-white" id="formGridCheckbox">
-                                                    <Form.Check className="bg-white" type="checkbox" label="Excellent!" />
-                                                </Form.Group>
-                                                <Form.Group className="mb-3 bg-white" id="formGridCheckbox">
-                                                    <Form.Check className="bg-white" type="checkbox" label="Great!" />
-                                                </Form.Group>
+                                                <Row className="bg-white">
+                                                    <Col className="bg-white">
+                                                    <Form.Group className="mb-3 bg-white pr-1" id="formGridCheckbox">
+                                                        <Form.Check className="bg-white" type="checkbox" label="Excellent" />
+                                                    </Form.Group>
+                                                    <Form.Group className="mb-3 bg-white pr-1" id="formGridCheckbox">
+                                                        <Form.Check className="bg-white" type="checkbox" label="Great" />
+                                                    </Form.Group>
+                                                    <Form.Group className="mb-3 bg-white pr-1" id="formGridCheckbox">
+                                                        <Form.Check className="bg-white" type="checkbox" label="Good" />
+                                                    </Form.Group>
+                                                    </Col>
+                                                    <Col className="bg-white">
+                                                    <Form.Group className="mb-3 bg-white pr-1" id="formGridCheckbox">
+                                                        <Form.Check className="bg-white" type="checkbox" label="Okay" />
+                                                    </Form.Group>
+                                                    <Form.Group className="mb-3 bg-white pr-1" id="formGridCheckbox">
+                                                        <Form.Check className="bg-white" type="checkbox" label="New" />
+                                                    </Form.Group>
+                                                    <Form.Group className="mb-3 bg-white pr-1" id="formGridCheckbox">
+                                                        <Form.Check className="bg-white" type="checkbox" label="Used" />
+                                                    </Form.Group>
+                                                    </Col>
+                                                </Row>
                                             </Col>
                                         </Row>
 
