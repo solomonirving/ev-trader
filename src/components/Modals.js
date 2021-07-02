@@ -18,21 +18,18 @@ export default class Modals extends Component {
       var myHeaders = new Headers();
           myHeaders.append("api_key", API_KEY);
           myHeaders.append("access_token", DELIVERY_TOKEN);
-
       var requestOptions = {
           method: 'GET',
           headers: myHeaders,
           redirect: 'follow'
       };
-
-      //Header
       const url = "https://cdn.contentstack.io/v3/content_types/header/entries/blt2063159d6e6c183a?environment=development";
       const response = await fetch(url, requestOptions)
       const data = await response.json()
           this.setState({
-                          companyLogo: data.entry.company_logo.url,
-                          heading: data.entry.navigation_menu[0].title,                          
-                      });
+            companyLogo: data.entry.company_logo.url,
+            heading: data.entry.navigation_menu[0].title,                          
+          });
           // console.log(data.entry.navigation_menu[0].title)
 
 
@@ -52,15 +49,14 @@ export default class Modals extends Component {
                 </Modal.Header>
                 <Modal.Body>
                 <Modal.Title className="modal-title">Sign into account</Modal.Title>
-
                   <div className="ml-auto rounded" id="modal_buttons">
-                      <Form inline id="modalForm">
-                          <FormControl type="text" id="modalInput" placeholder="Username" className="mr-sm-2 border-1" />
+                      <Form inline className="modalForm">
+                          <FormControl type="text" placeholder="Username" className="mr-sm-2 border-1 modalInput" />
                       </Form>
                   </div>
                   <div className="ml-auto rounded" id="modal_buttons">
-                      <Form inline id="modalForm" >
-                          <FormControl type="text" id="modalInput" placeholder="Password" className="mr-sm-2 border-1" />
+                      <Form inline className="modalForm" >
+                          <FormControl type="text" placeholder="Password" className="mr-sm-2 border-1 modalInput" />
                       </Form>
                   </div>
                 </Modal.Body>
@@ -70,8 +66,6 @@ export default class Modals extends Component {
               </Modal>     
             </div>
           </>
-     
-      
       )
     }
 }

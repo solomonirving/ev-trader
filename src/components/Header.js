@@ -18,14 +18,11 @@ export default class Header extends Component {
         var myHeaders = new Headers();
             myHeaders.append("api_key", API_KEY);
             myHeaders.append("access_token", DELIVERY_TOKEN);
-
         var requestOptions = {
             method: 'GET',
             headers: myHeaders,
             redirect: 'follow'
         };
-
-        //Header
         const url = "https://cdn.contentstack.io/v3/content_types/header/entries/blt2063159d6e6c183a?environment=development";
         const response = await fetch(url, requestOptions)
         const data = await response.json()
@@ -34,17 +31,9 @@ export default class Header extends Component {
                             heading: data.entry.navigation_menu[1].title,
                         });
             // console.log(data.entry.navigation_menu[1].title)
-
-        // Categories
-    //     const url2 = "https://cdn.contentstack.io/v3/content_types/category/entries?environment=development";
-    //     const response2 = await fetch(url2, requestOptions)
-    //     const data2 = await response2.json()
-    //         this.setState({categories: data2.entries})
-    //         console.log(data2.entries)
     }
 
     render() {
-
         return (
             <div className="nav-bar align-text-bottom">
                 <Navbar className="d-flex" id="header_container" expand= "md">
@@ -70,7 +59,6 @@ export default class Header extends Component {
                     </Nav>
                     </Navbar.Collapse> 
                 </Navbar> 
-
             </div>
         )
     }

@@ -1,7 +1,5 @@
 import React, { Component } from 'react'
 import { Container, Col, Image, Row, Card, Form, Button } from 'react-bootstrap'
-// import Category from "./Category"
-// import { IoPersonOutline } from 'react-icons/fa';
 import { IoPersonOutline, IoLocationOutline } from "react-icons/io5";
 
 export default class VehicleDetail extends Component {
@@ -21,17 +19,13 @@ export default class VehicleDetail extends Component {
         var myHeaders = new Headers();
             myHeaders.append("api_key", API_KEY);
             myHeaders.append("access_token", DELIVERY_TOKEN);
-
         var requestOptions = {
             method: 'GET',
             headers: myHeaders,
             redirect: 'follow'
         };
         let id = this.props.match.params.id;
-        // console.log(typeof(id))
-
         const url = `https://cdn.contentstack.io/v3/content_types/copy_of_vehicle_listing/entries/${id}?environment=development`;
-
         const response = await fetch(url, requestOptions)
         const data = await response.json()
             this.setState({details: data.entry,
@@ -45,7 +39,6 @@ export default class VehicleDetail extends Component {
     render() {
         return (
             <div>
-                {/* <Category /> */}
                 <Container fluid id="vehicle_detail_container">
                     <Row id="main_row">
                         <Col id="col_1" sm={12} md={8}>
@@ -77,8 +70,7 @@ export default class VehicleDetail extends Component {
                                         <div className="rounded bg-white p-1 detail-text"><b className="detail_bold bg-white mr-3">Miles</b> {this.state.details.odometer}</div>   
                                     </div>
                                     </div>
-                                </Card>
-                                         
+                                </Card>        
                             </Row>
                                             
                             <Row id="detail_image_container">
@@ -92,7 +84,7 @@ export default class VehicleDetail extends Component {
                         <Col id="col_2" md={4} sm={12}>
                             <Card className="rounded shadow border-0 mt-2" id="detail_card_2">
                                 <Card.Body className="rounded" id="detail_card_title">Sellers Price</Card.Body>
-                                    <Card.Body id="details_price" className="rounded h2 mb-2 pt-0">${this.state.details.price}</Card.Body>
+                                <Card.Body id="details_price" className="rounded h2 mb-2 pt-0">${this.state.details.price}</Card.Body>
                             </Card>
                             <Card className="rounded shadow border-0 mt-3" id="detail_card_2">
                                 <Card.Body className="rounded mb-2 pl-4" id="detail_card_title">Make An Offer</Card.Body>
@@ -100,28 +92,24 @@ export default class VehicleDetail extends Component {
                                 <div className="bg-white d-flex justify-content-center">
                                     <Form className="rounded bg-white" id="detail_container"> 
                                         <Form.Group className="bg-white"  controlId="formBasicEmail">
-                                            <Form.Control className="bg-light w-100 border-0" id="detail_form" type="email" placeholder="Name" />
+                                            <Form.Control className="bg-light w-100 border-0 detail_form" type="email" placeholder="Name" />
                                         </Form.Group>
-
                                         <Form.Group className="bg-white" controlId="formBasicPassword">
-                                            <Form.Control className="bg-light w-100 border-0" id="detail_form" type="email" placeholder="Email" />
+                                            <Form.Control className="bg-light w-100 border-0 detail_form" type="email" placeholder="Email" />
                                         </Form.Group>
-
                                         <Form.Group className="bg-white d-flex justify-content-start" controlId="formBasicPassword">
                                         <Form.Label id="detail_offer" className="bg-white font-weight-bold pr-1 align-self-center ">Offer Amount</Form.Label>
-                                            <Form.Control className="bg-light w-50 align-self-end ml-4 border-0" id="detail_form" type="password" placeholder="$0.00" />
+                                            <Form.Control className="bg-light w-50 align-self-end ml-4 border-0 detail_form" type="password" placeholder="$0.00" />
                                         </Form.Group>
-
                                         <Form.Group className="bg-white" controlId="formBasicPassword">
-                                            <Form.Control className="align-self-end bg-light w-100 border-0" id="detail_form" type="password" placeholder="Notes" />
+                                            <Form.Control className="align-self-end bg-light w-100 border-0 detail_form" type="password" placeholder="Notes" />
                                         </Form.Group>
-
                                         <Button id="detail_submit" className="align-self-end badge-pill mb-3 w-100 border-0" variant="primary" type="submit">
                                             Send Offer
                                         </Button>
                                     </Form>
                                 </div>
-
+                                
                             </Card>
                         </Col>
                     </Row>

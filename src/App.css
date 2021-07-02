@@ -115,12 +115,12 @@ button.close {
 .ml-auto, rounded {
     background-color: white !important;
 }
-#modalForm{
+.modalForm{
     background-color: white !important;
     margin: 0 0 10px 0px;
     border-radius: 50px !important;
 }
-#modalInput {
+.modalInput {
     margin: 0 !important;
 }
 .mr-sm-2.border-1.form-control {
@@ -333,12 +333,12 @@ button.close {
 #detail_offer {
     font-size: 15px !important;
 }
-#detail_form{
+.detail_form{
     background-color: rgb(239, 239, 239) !important;
     opacity: 50%;
     width: 50%;
 }
-#detail_container {
+.detail_container {
     width: 90%;
 }
 .detail_box {
@@ -380,7 +380,7 @@ button.close {
     font-size: 20px;
 }
 
-#list_form {
+.list_form {
     background-color: rgb(239,239,239) !important;
     opacity: 50% !important;
     margin-bottom: 15px;
@@ -408,7 +408,7 @@ textarea {
     justify-content: flex-start;
     background-color: white !important;
 }
-#detail_form_2{
+.detail_form_2{
     background-color: rgb(239, 239, 239) !important;
     opacity: 50%;
     width: 60%;
@@ -469,7 +469,7 @@ svg {
         margin-left: 0 !important;
         margin-bottom: 10px !important;
     }
-    #modalinput {
+    .modalinput {
             display: flex;
             justify-content: center;
             width: 256px;
