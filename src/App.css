@@ -82,7 +82,7 @@
     letter-spacing: 1px;
 }
 #category_items {
-    padding-left: 15px !important;
+    padding-left: 0px !important;
 }
 
 /*****************************
@@ -211,6 +211,16 @@ button.close {
 /*****************************
             HOME 
 *****************************/
+#latest {
+    margin-left: 15px !important;
+    margin-right: 10px !important;
+    height: 26px;
+    align-self: center !important;
+}
+.buttons {
+    display: flex;
+    align-content: center;
+}
 .newest-listings {
     font-family: futuraLight;
 }
@@ -432,7 +442,7 @@ svg {
         justify-content: center;
     }
     #latest {
-        margin-left: 3px !important;
+        margin-left: 16px !important;
     }
     .home-title {
         margin-left: 3px !important;
@@ -549,7 +559,8 @@ svg {
         padding-right: 20px !important;
     }
     #latest {
-        margin-left: 6px !important;
+        margin-left: 20px !important;
+        height: 17px !important;
     }
     .home-title {
         margin-left: 6px !important;
@@ -566,12 +577,20 @@ svg {
         margin-top: 50px !important;
     } */
   }
+  @media (max-width: 670px) and  (min-width: 630px) {
+    #latest {
+        width: 50px !important;
+    }
+}
 @media (max-width: 630px) and  (min-width: 600px) {
     .nav-link {
         width: 40px !important;
     }
     #modal_buttons {
         margin-left: 0 !important;
+    }
+    #latest {
+        width: 40px;
     }
 }
 @media (max-width: 600px) {
@@ -598,16 +617,13 @@ svg {
      justify-content: center !important;   
     }
     #latest {
-    margin-left: .5rem !important;
+        margin-left: 25px !important;
     }
     .nav-link {
         width: 35px !important;
     }
     #header_container {
         padding-right: 25px !important;
-    }
-    #latest {
-        margin-left: 11px !important;
     }
     .home-title {
         margin-left: 6px !important;

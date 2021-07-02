@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Category from './Category';
-import AllCategories from './AllCategories';
+// import AllCategories from './AllCategories';
 import { Link } from "react-router-dom";
 import { Card } from 'react-bootstrap';
 
@@ -11,6 +11,7 @@ export default class Home extends Component {
         this.state = {
             vehicle: [],
         }
+        this.baseState=this.state
         this.selectCategory = this.selectCategory.bind(this)
     }
     
@@ -49,10 +50,10 @@ export default class Home extends Component {
         const response = await fetch(url, requestOptions)
         const data = await response.json()
             this.setState({vehicle: data.entries});
-            console.log(data.entries)
+            // console.log(data.entries)
     }
 
-    async allCategories() {
+    async scream(e) {
         const API_KEY = process.env.REACT_APP_APIKEY
         const DELIVERY_TOKEN = process.env.REACT_APP_DELIVERY_TOKEN
         var myHeaders = new Headers();
@@ -71,14 +72,17 @@ export default class Home extends Component {
             console.log(data.entries)
     }
 
-        
-    render() {
+    // scream(m) {
+    //     alert(m);
+    // }
 
+    render() {
         return (
             <div className="home-main">
-                <AllCategories getAllCategories = {this.allCats} />
-                <Category onselectCategory = {this.selectCategory} />
-                
+                <div className="buttons">
+                    <button type="button" value={this.state.all} className="btn btn-block btn-light mr-2 mb-1 mt-2 nav-link" id="latest" onClick={ () => this.scream("hello")}>Latest</button>
+                    <Category onselectCategory = {this.selectCategory} />
+                </div>
                 <div className="home">
                     <div className="home-title">
                         <h5 className="newest-listings"><b>Newest Listings</b></h5>
