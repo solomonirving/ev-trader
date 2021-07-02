@@ -23,27 +23,17 @@ export default class Category extends Component {
         const data = await response.json()
             this.setState({headers: data.entries})
             // console.log(data.entries)   
-    
-        // const url2 = "https://cdn.contentstack.io/v3/content_types/copy_of_vehicle_listing/entries?environment=development&query={\"make\": \"Nissan\"}";
-        // const response2 = await fetch(url2, requestOptions)
-        // const data2 = await response2.json()
-        //     this.setState({filter: data2.entries})
     }
-
-        // selectCategory(e) {
-        //     console.log(e.target.innerHTML)
-        // }
 
     render() {
         return (
             <div>
                 <Navbar id="category_items">
                     <div className="btn-group" role="group" id="basic-navbar-nav">
-                        <button type="button" className="btn btn-block btn-light mr-2 mb-1 mt-2 nav-link" id="latest">Latest</button>
+                        {/* <button type="button" className="btn btn-block btn-light mr-2 mb-1 mt-2 nav-link" id="latest" onClick={this.props.getAllCategories}>Latest</button> */}
                         {this.state.headers.map(ev => (
                             <Nav key={ev.uid} >  
-                                {/* <button type="button" className="btn btn-block btn-light mr-2 mb-1 mt-2 nav-link" onClick={this.selectCategory}>{ev.title}</button> */}
-                                <button type="button" className="btn btn-block btn-light mr-2 mb-1 mt-2 nav-link" onClick={this.props.onselectCategory}>{ev.title}</button>
+                                <button type="button" value={ev.uid} className="btn btn-block btn-light mr-2 mb-1 mt-2 nav-link" onClick={this.props.onselectCategory}>{ev.title}</button>
                             </Nav>
                         ))}
                     </div>

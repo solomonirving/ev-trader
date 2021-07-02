@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Category from './Category';
+import AllCategories from './AllCategories';
 import { Link } from "react-router-dom";
 import { Card } from 'react-bootstrap';
 
@@ -9,8 +10,8 @@ export default class Home extends Component {
         super(props)
         this.state = {
             vehicle: [],
-            filter: [], 
         }
+        this.selectCategory = this.selectCategory.bind(this)
     }
     
     async componentDidMount() {
@@ -27,27 +28,56 @@ export default class Home extends Component {
         const url = "https://cdn.contentstack.io/v3/content_types/copy_of_vehicle_listing/entries?environment=development";
         const response = await fetch(url, requestOptions)
         const data = await response.json()
-            this.setState({vehicle: data.entries})
+            this.setState({vehicle: data.entries});
             // console.log(data.entries)
     }
-    
 
-    // async componentDidUpdate(e) {
-    //     const newvar = e.target.innerHTML
-    //         console.log(newvar)
-    // // const url = "https://cdn.contentstack.io/v3/content_types/copy_of_vehicle_listing/entries?environment=development&query={\"make\": \"Nissan\"}";
-     
-    // }
-
-    selectCategory(e) {
-        console.log(e.target.innerHTML.toString())
+    async selectCategory(e) {
+        const API_KEY = process.env.REACT_APP_APIKEY
+        const DELIVERY_TOKEN = process.env.REACT_APP_DELIVERY_TOKEN
+        var myHeaders = new Headers();
+            myHeaders.append("api_key", API_KEY);
+            myHeaders.append("access_token", DELIVERY_TOKEN);
+        var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            redirect: 'follow'
+        };
+        const newvar = e.target.value
+        // const url = "https://cdn.contentstack.io/v3/content_types/copy_of_vehicle_listing/entries?environment=development";
+        const url = `https://cdn.contentstack.io/v3/content_types/copy_of_vehicle_listing/entries?environment=development&query=%7B%22category.uid%22:%20%22${newvar}%22%7D`;
+        const response = await fetch(url, requestOptions)
+        const data = await response.json()
+            this.setState({vehicle: data.entries});
+            console.log(data.entries)
     }
+
+    async allCategories() {
+        const API_KEY = process.env.REACT_APP_APIKEY
+        const DELIVERY_TOKEN = process.env.REACT_APP_DELIVERY_TOKEN
+        var myHeaders = new Headers();
+            myHeaders.append("api_key", API_KEY);
+            myHeaders.append("access_token", DELIVERY_TOKEN);
+        var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            redirect: 'follow'
+        };
+        // const newvar = e.target.value
+        const url = "https://cdn.contentstack.io/v3/content_types/copy_of_vehicle_listing/entries?environment=development";
+        const response = await fetch(url, requestOptions)
+        const data = await response.json()
+            this.setState({vehicle: data.entries});
+            console.log(data.entries)
+    }
+
         
-    render() { 
+    render() {
 
         return (
             <div className="home-main">
-                <Category onselectCategory= {this.selectCategory} />
+                <AllCategories getAllCategories = {this.allCats} />
+                <Category onselectCategory = {this.selectCategory} />
                 
                 <div className="home">
                     <div className="home-title">
