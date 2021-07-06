@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Header from './Header'
 import { Container, Col, Image, Row, Card, Form, Button } from 'react-bootstrap'
 import { IoPersonOutline, IoLocationOutline } from "react-icons/io5";
 
@@ -38,6 +39,8 @@ export default class VehicleDetail extends Component {
 
     render() {
         return (
+            <>
+            <Header />
             <div>
                 <Container fluid id="vehicle_detail_container">
                     <Row id="main_row">
@@ -115,6 +118,7 @@ export default class VehicleDetail extends Component {
                     </Row>
                 </Container>
           </div>
+          </>
         )
     }
 }

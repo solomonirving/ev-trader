@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import Header from './Header'
 import { Container, Col, Row, Card, Form, Button } from 'react-bootstrap';
 
 export default class ListMyCar extends Component {
     render() {
         return (
             <div>
+                <Header />
                 <Container fluid id="vehicle_detail_container">
                     <Row className="justify-content-between" id="list_main_row">
                         <Col className="seller_details" id="col_1" sm={12} md={5}>

@@ -47,7 +47,7 @@ export default class Header extends Component {
                     <Nav className="mr-auto my-2 my-lg-0 justify-content-end" id="navbar-scroll" style={{ maxHeight: '200px' }}>
                         <div className="rounded" id="rounded_2">
                             <Form inline className="search">
-                                <FormControl id="header-input" type="text" placeholder="Search for Car..." className="mr-2 border-0" />
+                                <FormControl id="header-input" type="text"  placeholder="Search for Car..." className="mr-2 border-0" onChange={this.props.search} />
                             </Form>
                         </div>
                         <div className="p5 mr-2 " id="listMyCar">

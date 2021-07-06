@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Category from './Category';
+import Header from './Header'
 import { Link } from "react-router-dom";
 import { Card } from 'react-bootstrap';
 
@@ -71,11 +72,32 @@ export default class Home extends Component {
             // console.log(data.entries)
     }
 
+    // Function to get search results
+    async searchListings(e) {
+        const API_KEY = process.env.REACT_APP_APIKEY
+        const DELIVERY_TOKEN = process.env.REACT_APP_DELIVERY_TOKEN
+        var myHeaders = new Headers();
+            myHeaders.append("api_key", API_KEY);
+            myHeaders.append("access_token", DELIVERY_TOKEN);
+        var requestOptions = {
+            method: 'GET',
+            headers: myHeaders,
+            redirect: 'follow'
+        };
+        let color = e.target.value;
+        const url = `https://cdn.contentstack.io/v3/content_types/copy_of_vehicle_listing/entries?environment=development&query=%7B%20%22color%22:%20%7B%20%22$regex%22:%20%22%5E${color}%22%20%7D%20%7D`;
+        const response = await fetch(url, requestOptions)
+        const data = await response.json()
+        console.log(data.entries)
+    }
+
     render() {
-        return (
+        return ( 
+            <>
+            < Header search = {this.searchListings} />
             <div className="home-main">
                 <div className="buttons">
-                    <button type="button" className="btn btn-block btn-light mr-2 mb-1 mt-2 nav-link" id="latest" onClick={ () => this.allListings("hello") }>Latest</button>
+                    <button type="button" className="btn btn-block btn-light mr-2 mb-1 mt-2 nav-link" id="latest" onClick={ () => this.allListings() }>Latest</button>
                     <Category onselectCategory = {this.selectCategory} />
                 </div>
                 <div className="home">
@@ -113,6 +135,7 @@ export default class Home extends Component {
                     ))}
                 </div>
             </div>
+            </>
         )
     }
 }

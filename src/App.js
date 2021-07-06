@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./components/Home";
 import ListMyCar from "./components/ListMyCar";
-import Header from "./components/Header";
+// import Header from "./components/Header";
 import VehicleDetail from "./components/VehicleDetail";
 import "./App.css";
 
@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-      <Header />
+      {/* <Header /> */}
           <Switch>
             <Route exact path="/" component={ Home }/>
             <Route path="/vehicle_detail/:id" component={ VehicleDetail } />
