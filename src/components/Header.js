@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Modals from "./Modals";
 import { Link } from "react-router-dom";
-import { Navbar, Nav, FormControl, Form, Card } from 'react-bootstrap';
+import { Navbar, Nav, FormControl, Form } from 'react-bootstrap';
 
 export default class Header extends Component {
     constructor(props) {
@@ -35,11 +35,18 @@ export default class Header extends Component {
 
     render() {
         return (
+            
             <div className="nav-bar align-text-bottom">
                 <Navbar className="d-flex" id="header_container" expand= "md">
                     <div className="mr-auto p3">
                     <Link to ={`/`} style={{ textDecoration: 'none', color: 'rgb(113, 113, 113)' }}>
-                        <Card.Img variant="top" src={this.state.companyLogo} alt="/" className="img-fluid" />
+                        {/* <Navbar.Brand className="navbar-brand"> */}
+                        <img 
+                            src={this.state.companyLogo} 
+                            alt="/" 
+                            className="img-fluid" 
+                        />
+                        {/* </Navbar.Brand> */}
                     </Link>
                     </div>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
@@ -47,12 +54,15 @@ export default class Header extends Component {
                     <Nav className="mr-auto my-2 my-lg-0 justify-content-end" id="navbar-scroll" style={{ maxHeight: '200px' }}>
                         <div className="rounded" id="rounded_2">
                             <Form inline className="search">
-                                <FormControl id="header-input" type="text"  placeholder="Search for Car..." className="mr-2 border-0" onChange={this.props.search} />
+                                <FormControl id="header-input" type="text"  placeholder="Search for Car..." className="mr-2 border-0" 
+                                // onChange={this.props.search} />
+                                onChange={this.props.search} />
+
                             </Form>
                         </div>
                         <div className="p5 mr-2 " id="listMyCar">
                             <Link to ={`/list_my_car/`} style={{ textDecoration: 'none', color: 'rgb(113, 113, 113)' }}>
-                                <button type="button" className="btn btn-block btn-light nav-link-2" id="list-my-vehicle">{this.state.heading}</button>
+                                <button type="button" className="btn btn-light nav-link-2" id="list-my-vehicle">{this.state.heading}</button>
                             </Link>
                         </div>
                         <Modals />                        

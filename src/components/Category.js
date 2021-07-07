@@ -31,7 +31,7 @@ export default class Category extends Component {
                     <div className="btn-group" role="group" id="basic-navbar-nav">
                         {this.state.headers.map(ev => (
                             <Nav key={ev.uid} >  
-                                <button type="button" value={ev.uid} className="btn btn-block btn-light mr-2 mb-1 mt-2 nav-link" onClick={this.props.onselectCategory}>{ev.title}</button>
+                                <button type="button" value={ev.uid} className="btn btn-light mr-2 nav-link" onClick={this.props.onselectCategory}>{ev.title}</button>
                             </Nav>
                         ))}
                     </div>

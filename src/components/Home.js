@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Category from './Category';
 import Header from './Header'
 import { Link } from "react-router-dom";
-import { Card } from 'react-bootstrap';
+import { Card, Container, Navbar } from 'react-bootstrap';
 
 
 export default class Home extends Component {
@@ -10,8 +10,9 @@ export default class Home extends Component {
         super(props)
         this.state = {
             vehicle: [],
+            searchResults: [],
         }
-        this.baseState=this.state
+        this.textHandler = this.textHandler.bind(this)
         this.selectCategory = this.selectCategory.bind(this)
     }
     
@@ -50,7 +51,7 @@ export default class Home extends Component {
         const response = await fetch(url, requestOptions)
         const data = await response.json()
             this.setState({vehicle: data.entries});
-            // console.log(data.entries)
+            console.log(data.entries)
     }
 
     // Function to get all listings
@@ -68,12 +69,16 @@ export default class Home extends Component {
         const url = "https://cdn.contentstack.io/v3/content_types/copy_of_vehicle_listing/entries?environment=development";
         const response = await fetch(url, requestOptions)
         const data = await response.json()
-            this.setState({vehicle: data.entries});
+            await this.setState({vehicle: data.entries});
             // console.log(data.entries)
     }
 
+    // textHandler = (event) => {
+    //     console.log(event.target.value)
+    // }
+
     // Function to get search results
-    async searchListings(e) {
+     async textHandler (e) {
         const API_KEY = process.env.REACT_APP_APIKEY
         const DELIVERY_TOKEN = process.env.REACT_APP_DELIVERY_TOKEN
         var myHeaders = new Headers();
@@ -84,20 +89,24 @@ export default class Home extends Component {
             headers: myHeaders,
             redirect: 'follow'
         };
-        let color = e.target.value;
-        const url = `https://cdn.contentstack.io/v3/content_types/copy_of_vehicle_listing/entries?environment=development&query=%7B%20%22color%22:%20%7B%20%22$regex%22:%20%22%5E${color}%22%20%7D%20%7D`;
+        let title = e.target.value;
+        const url = `https://cdn.contentstack.io/v3/content_types/copy_of_vehicle_listing/entries?environment=development&query=%7B%22title%22:%20%22${title}%22%7D`;
         const response = await fetch(url, requestOptions)
         const data = await response.json()
-        console.log(data.entries)
+        this.setState({vehicle: data.entries});
+        // console.log(e.target.value)
+        // console.log(data.entries[0])
     }
 
     render() {
         return ( 
-            <>
-            < Header search = {this.searchListings} />
+            <Container fluid>
+            < Header search = {this.textHandler} />
             <div className="home-main">
                 <div className="buttons">
-                    <button type="button" className="btn btn-block btn-light mr-2 mb-1 mt-2 nav-link" id="latest" onClick={ () => this.allListings() }>Latest</button>
+                    <Navbar id="latest">
+                        <button type="button" className="btn btn-light nav-link" onClick={ () => this.allListings() }>Latest</button>
+                    </Navbar>
                     <Category onselectCategory = {this.selectCategory} />
                 </div>
                 <div className="home">
@@ -135,7 +144,7 @@ export default class Home extends Component {
                     ))}
                 </div>
             </div>
-            </>
+            </Container>
         )
     }
 }

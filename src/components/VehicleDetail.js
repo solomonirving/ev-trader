@@ -39,7 +39,7 @@ export default class VehicleDetail extends Component {
 
     render() {
         return (
-            <>
+            <Container fluid>
             <Header />
             <div>
                 <Container fluid id="vehicle_detail_container">
@@ -92,22 +92,22 @@ export default class VehicleDetail extends Component {
                             <Card className="rounded shadow border-0 mt-3" id="detail_card_2">
                                 <Card.Body className="rounded mb-2 pl-4" id="detail_card_title">Make An Offer</Card.Body>
                                 
-                                <div className="bg-white d-flex justify-content-center">
-                                    <Form className="rounded bg-white" id="detail_container"> 
-                                        <Form.Group className="bg-white"  controlId="formBasicEmail">
+                                <div className="bg-white d-flex pl-3 justify-content-left">
+                                    <Form className="rounded  bg-white" id="detail_container"> 
+                                        <Form.Group className="rounded"  controlId="formBasicEmail">
                                             <Form.Control className="bg-light w-100 border-0 detail_form" type="email" placeholder="Name" />
                                         </Form.Group>
-                                        <Form.Group className="bg-white" controlId="formBasicPassword">
+                                        <Form.Group className="rounded" controlId="formBasicPassword">
                                             <Form.Control className="bg-light w-100 border-0 detail_form" type="email" placeholder="Email" />
                                         </Form.Group>
                                         <Form.Group className="bg-white d-flex justify-content-start" controlId="formBasicPassword">
-                                        <Form.Label id="detail_offer" className="bg-white font-weight-bold pr-1 align-self-center ">Offer Amount</Form.Label>
-                                            <Form.Control className="bg-light w-50 align-self-end ml-4 border-0 detail_form" type="password" placeholder="$0.00" />
+                                        <Form.Label id="detail_offer" className="bg-white roundedfont-weight-bold pr-1 align-self-center ">Offer Amount</Form.Label>
+                                            <Form.Control className=" w-100 align-self-end ml-0 border-0 detail_form" type="password" placeholder="$0.00" />
                                         </Form.Group>
-                                        <Form.Group className="bg-white" controlId="formBasicPassword">
+                                        <Form.Group className="rounded" controlId="formBasicPassword">
                                             <Form.Control className="align-self-end bg-light w-100 border-0 detail_form" type="password" placeholder="Notes" />
                                         </Form.Group>
-                                        <Button id="detail_submit" className="align-self-end badge-pill mb-3 w-100 border-0" variant="primary" type="submit">
+                                        <Button id="detail_submit" className="align-self-end mb-3 w-100 border-0" variant="primary" type="submit">
                                             Send Offer
                                         </Button>
                                     </Form>
@@ -118,7 +118,7 @@ export default class VehicleDetail extends Component {
                     </Row>
                 </Container>
           </div>
-          </>
+          </Container>
         )
     }
 }

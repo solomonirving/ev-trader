@@ -5,20 +5,19 @@ import { Container, Col, Row, Card, Form, Button } from 'react-bootstrap';
 export default class ListMyCar extends Component {
     render() {
         return (
-            <div>
-                <Header />
                 <Container fluid id="vehicle_detail_container">
-                    <Row className="justify-content-between" id="list_main_row">
+                <Header />
+                    <Row className="justify-space-around" id="list_main_row">
                         <Col className="seller_details" id="col_1" sm={12} md={5}>
                             <Row className="rounded" id="detail_image_container">
                             <Card className="rounded border-0 shadow mt-2" id="detail_card_2">
                                 <Card.Body className="rounded mb-2 pl-4" id="detail_card_title">Seller Details</Card.Body>
                                 <div className="bg-white d-flex justify-content-center">
                                     <Form className="rounded bg-white detail_container">                                          
-                                        <Form.Group className="bg-white"  controlId="formBasicEmail">
+                                        <Form.Group className="rounded"  controlId="formBasicEmail">
                                             <Form.Control className="bg-light w-100 border-0 detail_form" type="email" placeholder="Title" />
                                         </Form.Group>
-                                        <Form.Group className="bg-white"  controlId="formBasicEmail">
+                                        <Form.Group className="rounded"  controlId="formBasicEmail">
                                             <Form.Control className="bg-light w-100 border-0 detail_form" type="email" placeholder="Sellers Name" />
                                         </Form.Group>
 
@@ -59,7 +58,7 @@ export default class ListMyCar extends Component {
                                     <div className="detail_box bg-white">
                                         <div className="bg-white rounded pl-3">
                                             <div className="rounded bg-white p-1" id="detail_card_title">Price</div>
-                                            <Form.Group className="bg-white"  controlId="formBasicEmail">
+                                            <Form.Group className="rounded"  controlId="formBasicEmail">
                                             <Form.Control className="bg-light w-100 border-0 detail_form" type="email" placeholder="$0.00" />
                                             </Form.Group>
                                         </div> 
@@ -109,12 +108,12 @@ export default class ListMyCar extends Component {
                                         </Row>
                                          
 
-                                        <Row className="mb-3">
-                                            <Col className="bg-white"> 
-                                            <Form.Control className="bg-light w-10 border-0 detail_form_2" type="email" placeholder="Model" />
+                                        <Row className="mb-3 bg-white">
+                                            <Col className="bg-white rounded"> 
+                                            <Form.Control className="border-0 detail_form_2" type="email" placeholder="Model" />
                                             </Col> 
-                                            <Col className="bg-white">
-                                            <Form.Control className="bg-light w-4 border-0 detail_form_2" type="email" placeholder="Color" />
+                                            <Col className="bg-white rounded">
+                                            <Form.Control className="border-0 detail_form_2" type="email" placeholder="Color" />
                                             </Col>
                                         </Row>
 
@@ -166,7 +165,7 @@ export default class ListMyCar extends Component {
                                             <Form.Control  placeholder="Description" as="textarea" rows={3} />
                                         </Form.Group>
 
-                                        <Button id="detail_submit" className="align-self-end badge-pill mb-3 w-60 border-0" variant="primary" type="submit">
+                                        <Button id="detail_submit" className="align-self-end mb-3 w-60 border-0" variant="primary" type="submit">
                                             Upload Image
                                         </Button>
                                     </Form>
@@ -175,7 +174,6 @@ export default class ListMyCar extends Component {
                         </Col>
                     </Row>
                 </Container>
-          </div>            
         )
     }
 }
