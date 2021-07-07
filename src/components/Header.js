@@ -48,11 +48,11 @@ export default class Header extends Component {
                     <Navbar.Collapse  className="navbar-collapse" >
                     <Nav className="mr-auto my-lg-0 justify-content-end" id="navbar-scroll" style={{ maxHeight: '200px' }}>
                         <div className="rounded" id="rounded_2">
-                            <Form inline className="search">
-                                <FormControl id="header-input" type="text"  placeholder="Search for Car..." className="mr-5 border-0" 
-                                // onChange={this.props.search} />
-                                onSubmit={this.props.search} />
+
+                            <Form onSubmit={this.props.search} inline className="search">
+                                <FormControl id="header-input" type="text"  placeholder="Search for Car..." className="mr-5 border-0"/>
                             </Form>
+                        
                         </div>
                         <div className="p5 mr-2 " id="listMyCar">
                             <Link to ={`/list-my-car`} style={{ textDecoration: 'none', color: 'rgb(113, 113, 113)' }}>
