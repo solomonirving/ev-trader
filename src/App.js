@@ -14,8 +14,8 @@ function App() {
       {/* <Header /> */}
           <Switch>
             <Route exact path="/" component={ Home }/>
-            <Route path="/vehicle_detail/:id" component={ VehicleDetail } />
-            <Route path="/list_my_car/" component={ ListMyCar } />
+            <Route path="/vehicle-detail/:id" component={ VehicleDetail } />
+            <Route path="/list-my-car" component={ ListMyCar } />
           </Switch>
       </Router>
     </div>

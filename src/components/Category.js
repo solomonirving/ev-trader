@@ -27,11 +27,11 @@ export default class Category extends Component {
     render() {
         return (
             <div>
-                <Navbar id="category_items ">
-                    <div className="btn-group d-flex align-content-between flex-wrap" role="group" id="basic-navbar-nav">
+                <Navbar id="category_items">
+                    <div className="btn-group ml-3 d-flex align-content-between flex-wrap" role="group" id="basic-navbar-nav">
                         {this.state.headers.map(ev => (
                             <Nav key={ev.uid}>  
-                                <button type="button" value={ev.uid} className="btn btn-light mr-2 mb-2 nav-link" onClick={this.props.onselectCategory}>{ev.title}</button>
+                                <button type="button" value={ev.uid} className="btn btn-light mr-3 mb-2 nav-link" onClick={this.props.onselectCategory}>{ev.title}</button>
                             </Nav>
                         ))}
                     </div>

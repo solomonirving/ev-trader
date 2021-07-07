@@ -11,7 +11,7 @@ export default class ListMyCar extends Component {
                         <Col className="seller_details" id="col_1" sm={12} md={5}>
                             <Row className="rounded" id="detail_image_container">
                             <Card className="rounded border-0 shadow mt-2" id="detail_card_2">
-                                <Card.Body className="rounded mb-2 pl-4" id="detail_card_title">Seller Details</Card.Body>
+                                <Card.Body className="rounded mb-2 pl-4 py-2" id="detail_card_title">Seller Details</Card.Body>
                                 <div className="bg-white d-flex justify-content-center">
                                     <Form className="rounded bg-white detail_container">                                          
                                         <Form.Group className="rounded"  controlId="formBasicEmail">
@@ -23,7 +23,7 @@ export default class ListMyCar extends Component {
 
                                         <div className="vehicle_detail_cont_1">
                                         <Form.Control className="border-0 w-10 list_form" as="select" defaultValue="City">
-                                                <option>City</option>
+                                                <option disabled>City</option>
                                                 <option>Los Angeles</option>
                                                 <option>San Francisco</option>
                                                 <option>Freemont</option>
@@ -36,7 +36,7 @@ export default class ListMyCar extends Component {
                                                 <option>Las Vegas</option> 
                                         </Form.Control>
                                         <Form.Control className="border-0 ml-5 w-10 list_form" as="select" defaultValue="State">
-                                                <option>State</option>
+                                                <option disabled>State</option>
                                                 <option>CA</option>
                                                 <option>NV</option>
                                                 <option>TX</option>
@@ -54,11 +54,11 @@ export default class ListMyCar extends Component {
                             </Row>
                                             
                             <Row className="rounded" id="detail_image_container">
-                                <Card className="rounded shadow border-0 mt-3 mb-2 bg-white py-3" id="list_card">
-                                    <div className="detail_box bg-white">
-                                        <div className="bg-white rounded pl-3">
-                                            <div className="rounded bg-white p-1" id="detail_card_title">Price</div>
-                                            <Form.Group className="rounded"  controlId="formBasicEmail">
+                                <Card className="rounded shadow border-0 mt-3 mb-2 bg-white" id="list_card">
+                                    <div className="detail_box bg-white w-100 rounded">
+                                        <div className="bg-white rounded w-100 py-1 px-3">
+                                            <div className="rounded bg-white" id="detail_card_title">Price</div>
+                                            <Form.Group className="rounded w-100"  controlId="formBasicEmail">
                                             <Form.Control className="bg-light w-100 border-0 detail_form" type="email" placeholder="$0.00" />
                                             </Form.Group>
                                         </div> 
@@ -69,14 +69,14 @@ export default class ListMyCar extends Component {
 
                         <Col className="mt-2" id="col_2" sm={12} md={6}>
                             <Card className="rounded shadow" id="detail_card_2">
-                                <Card.Body className="rounded border-0 mb-2 pl-4" id="detail_card_title">Vehicle Details</Card.Body>
+                                <Card.Body className="rounded border-0 mb-2 pl-4 py-2" id="detail_card_title">Vehicle Details</Card.Body>
                                 <div className="bg-white d-flex justify-content-center">
                                     <Form className="rounded bg-white detail_container"> 
 
                                         <Row>
                                             <Col className="bg-white">
                                             <Form.Control className="border-0 w-10 list_form" as="select" defaultValue="Year">
-                                                        <option>Year</option>
+                                                        <option disabled>Year</option>
                                                         <option>2011</option>
                                                         <option>2012</option>
                                                         <option>2013</option>
@@ -92,7 +92,7 @@ export default class ListMyCar extends Component {
                                             </Col>
                                             <Col className="bg-white">
                                             <Form.Control className="border-0 w-10 list_form" as="select" defaultValue="Make">
-                                                        <option>Make</option>
+                                                        <option disabled>Make</option>
                                                         <option>Nissan</option>
                                                         <option>Hyundai</option>
                                                         <option>Ford</option>
@@ -125,43 +125,43 @@ export default class ListMyCar extends Component {
                                             <Col className="bg-white">
                                                 <Card.Body className="rounded pl-0 pt-0" id="detail_card_title">Title Status</Card.Body>
                                                 <Form.Group className="mb-3 bg-white" id="formGridCheckbox">
-                                                    <Form.Check className="bg-white" type="checkbox" label="Clean" />
+                                                    <Form.Check className="bg-white" type="radio" name="groupOptions1" label="Clean" />
                                                 </Form.Group>
                                                 <Form.Group className="mb-3 bg-white" id="formGridCheckbox">
-                                                    <Form.Check className="bg-white" type="checkbox" label="Salvage" />
+                                                    <Form.Check className="bg-white" type="radio" name="groupOptions1" label="Salvage" />
                                                 </Form.Group>
                                             </Col>
 
                                             <Col className="bg-white">
-                                            <Card.Body className="rounded pl-0 pt-0" id="detail_card_title">Condition</Card.Body>
+                                            <Card.Body className="bg-white rounded pl-0 pt-0" id="detail_card_title">Condition</Card.Body>
                                                 <Row className="bg-white">
                                                     <Col className="bg-white">
-                                                    <Form.Group className="mb-3 bg-white pr-1" id="formGridCheckbox">
-                                                        <Form.Check className="bg-white" type="checkbox" label="Excellent" />
-                                                    </Form.Group>
-                                                    <Form.Group className="mb-3 bg-white pr-1" id="formGridCheckbox">
-                                                        <Form.Check className="bg-white" type="checkbox" label="Great" />
-                                                    </Form.Group>
-                                                    <Form.Group className="mb-3 bg-white pr-1" id="formGridCheckbox">
-                                                        <Form.Check className="bg-white" type="checkbox" label="Good" />
-                                                    </Form.Group>
+                                                        <Form.Group className="mb-3 bg-white pr-1" id="formGridCheckbox">
+                                                            <Form.Check className="bg-white" type="radio" name="groupOptions" label="Excellent" />
+                                                        </Form.Group>
+                                                        <Form.Group className="mb-3 bg-white pr-1" id="formGridCheckbox">
+                                                            <Form.Check className="bg-white" type="radio" name="groupOptions" label="Great" />
+                                                        </Form.Group>
+                                                        <Form.Group className="mb-3 bg-white pr-1" id="formGridCheckbox">
+                                                            <Form.Check className="bg-white" type="radio" name="groupOptions" label="Good" />
+                                                        </Form.Group>
                                                     </Col>
                                                     <Col className="bg-white">
-                                                    <Form.Group className="mb-3 bg-white pr-1" id="formGridCheckbox">
-                                                        <Form.Check className="bg-white" type="checkbox" label="Okay" />
-                                                    </Form.Group>
-                                                    <Form.Group className="mb-3 bg-white pr-1" id="formGridCheckbox">
-                                                        <Form.Check className="bg-white" type="checkbox" label="New" />
-                                                    </Form.Group>
-                                                    <Form.Group className="mb-3 bg-white pr-1" id="formGridCheckbox">
-                                                        <Form.Check className="bg-white" type="checkbox" label="Used" />
-                                                    </Form.Group>
+                                                        <Form.Group className="mb-3 bg-white pr-1" id="formGridCheckbox">
+                                                            <Form.Check className="bg-white" type="radio" name="groupOptions" label="Okay" />
+                                                        </Form.Group>
+                                                        <Form.Group className="mb-3 bg-white pr-1" id="formGridCheckbox">
+                                                            <Form.Check className="bg-white" type="radio" name="groupOptions" label="New" />
+                                                        </Form.Group>
+                                                        <Form.Group className="mb-3 bg-white pr-1" id="formGridCheckbox">
+                                                            <Form.Check className="bg-white" type="radio" name="groupOptions" label="Used" />
+                                                        </Form.Group>
                                                     </Col>
                                                 </Row>
                                             </Col>
                                         </Row>
 
-                                        <Form.Group className="mb-3 mt-2 rounded" id="list_text_area" controlId="exampleForm.ControlTextarea1" placeholder="Description">
+                                        <Form.Group className="mb-3 mt-3 rounded" id="list_text_area" controlId="exampleForm.ControlTextarea1" placeholder="Description">
                                             <Form.Control  placeholder="Description" as="textarea" rows={3} />
                                         </Form.Group>
 

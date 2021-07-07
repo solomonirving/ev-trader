@@ -69,7 +69,7 @@ export default class Home extends Component {
         const url = "https://cdn.contentstack.io/v3/content_types/copy_of_vehicle_listing/entries?environment=development";
         const response = await fetch(url, requestOptions)
         const data = await response.json()
-            await this.setState({vehicle: data.entries});
+            this.setState({vehicle: data.entries});
             // console.log(data.entries)
     }
 
@@ -89,26 +89,30 @@ export default class Home extends Component {
             headers: myHeaders,
             redirect: 'follow'
         };
+        // e.stopPropogation()
         e.preventDefault()
         let title = e.target.value;
         const url = `https://cdn.contentstack.io/v3/content_types/copy_of_vehicle_listing/entries?environment=development&query=%7B%22title%22:%20%22${title}%22%7D`;
         const response = await fetch(url, requestOptions)
         const data = await response.json()
-        this.setState({vehicle: data.entries});
-        // console.log(e.target.value)
-        // console.log(data.entries[0])
+            this.setState({vehicle: data.entries});
+            // console.log(e.target.value)
+            console.log(data.entries)
     }
 
     render() {
+        console.log(this.state.vehicle)
         return ( 
             <Container fluid>
             < Header search = {this.textHandler} />
             <div className="home-main">
                 <div className="buttons">
-                    <Navbar id="latest">
-                        <button type="submit" className="btn btn-light mb-2 nav-link" onClick={ () => this.allListings() }>Latest</button>
-                    </Navbar>
+                    <Navbar id="latest" className="d-flex align-content-between flex-wrap">
+                        <button type="submit" className="btn btn-light mb-2 nav-link" onClick={ () => this.allListings() }>Latest</button>                    
+                    </Navbar>                 
                     <Category onselectCategory = {this.selectCategory} />
+
+
                 </div>
                 <div className="home">
                     <div className="home-title">
@@ -119,7 +123,7 @@ export default class Home extends Component {
                 <div className="contain">                                        
                         {this.state.vehicle.map(ev => (                        
                         <div key={ev.uid}>
-                            <Link to ={`/vehicle_detail/${ev.uid}`} style={{ textDecoration: 'none', color: 'rgb(113, 113, 113)' }}>
+                            <Link to ={`/vehicle-detail/${ev.uid}`} style={{ textDecoration: 'none', color: 'rgb(113, 113, 113)' }}>
                                 <div className="home-cards">
                                     <Card className="cards shadow mb-3 border-0 bg-white rounded">
                                         <Card.Img variant="top" src={ev.images[0].url} className=".img-fluid rounded-top" />

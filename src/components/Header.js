@@ -7,9 +7,7 @@ export default class Header extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            companyLogo:[],
             heading: [],
-            categories: [],
         }
     }
     async componentDidMount() {
@@ -27,7 +25,6 @@ export default class Header extends Component {
         const response = await fetch(url, requestOptions)
         const data = await response.json()
             this.setState({
-                            companyLogo: data.entry.company_logo.url,
                             heading: data.entry.navigation_menu[1].title,
                         });
             // console.log(data.entry.navigation_menu[1].title)
@@ -37,31 +34,28 @@ export default class Header extends Component {
         return (
             
             <div className="nav-bar align-text-bottom">
-                <Navbar className="d-flex" id="header_container" expand= "md">
-                    <div className="mr-auto p3">
+                <Navbar className="d-flex mb-4" id="header_container" expand= "md">
+                    <div className="mr-auto pb-3">
                     <Link to ={`/`} style={{ textDecoration: 'none', color: 'rgb(113, 113, 113)' }}>
-                        {/* <Navbar.Brand className="navbar-brand"> */}
                         <img 
-                            src={this.state.companyLogo} 
+                            src="https://images.contentstack.io/v3/assets/blt54c8c0f2c2a9678f/blt4585c7e2b244b118/60c9269883f9fe49a6fed270/evtrader-logo.png"
                             alt="/" 
                             className="img-fluid" 
                         />
-                        {/* </Navbar.Brand> */}
                     </Link>
                     </div>
                     <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                     <Navbar.Collapse  className="navbar-collapse" >
-                    <Nav className="mr-auto my-2 my-lg-0 justify-content-end" id="navbar-scroll" style={{ maxHeight: '200px' }}>
+                    <Nav className="mr-auto my-lg-0 justify-content-end" id="navbar-scroll" style={{ maxHeight: '200px' }}>
                         <div className="rounded" id="rounded_2">
                             <Form inline className="search">
-                                <FormControl id="header-input" type="text"  placeholder="Search for Car..." className="mr-2 border-0" 
+                                <FormControl id="header-input" type="text"  placeholder="Search for Car..." className="mr-5 border-0" 
                                 // onChange={this.props.search} />
-                                onChange={this.props.search} />
-
+                                onSubmit={this.props.search} />
                             </Form>
                         </div>
                         <div className="p5 mr-2 " id="listMyCar">
-                            <Link to ={`/list_my_car/`} style={{ textDecoration: 'none', color: 'rgb(113, 113, 113)' }}>
+                            <Link to ={`/list-my-car`} style={{ textDecoration: 'none', color: 'rgb(113, 113, 113)' }}>
                                 <button type="button" className="btn btn-light nav-link-2" id="list-my-vehicle">{this.state.heading}</button>
                             </Link>
                         </div>

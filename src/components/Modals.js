@@ -51,17 +51,17 @@ export default class Modals extends Component {
                 <Modal.Title className="modal-title">Sign into account</Modal.Title>
                   <div className="w-100 bg-white rounded" id="modal_buttons">
                       <Form inline className="modalForm bg-white">
-                          <FormControl type="text" placeholder="Username" className=" border-1 modalInput" />
+                          <FormControl size="lg" type="text" placeholder="Username" className=" border-1 modalInput" />
                       </Form>
                   </div>
                   <div className="w-100 bg-white rounded" id="modal_buttons">
                       <Form inline className="modalForm" >
-                          <FormControl type="text" placeholder="Password" className=" border-1 modalInput" />
+                          <FormControl size="lg" type="text" placeholder="Password" className=" border-1 modalInput" />
                       </Form>
                   </div>
                 </Modal.Body>
                 <Modal.Footer className="modal-footer">
-                  <button type="button" className="btn btn-primary" id="modalSignIn">Sign In </button>
+                  <button type="button" size="lg" className="btn btn-primary" id="modalSignIn">Sign In</button>
                 </Modal.Footer>
               </Modal>     
           </Container>
