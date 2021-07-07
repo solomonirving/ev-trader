@@ -89,6 +89,7 @@ export default class Home extends Component {
             headers: myHeaders,
             redirect: 'follow'
         };
+        e.preventDefault()
         let title = e.target.value;
         const url = `https://cdn.contentstack.io/v3/content_types/copy_of_vehicle_listing/entries?environment=development&query=%7B%22title%22:%20%22${title}%22%7D`;
         const response = await fetch(url, requestOptions)
@@ -105,7 +106,7 @@ export default class Home extends Component {
             <div className="home-main">
                 <div className="buttons">
                     <Navbar id="latest">
-                        <button type="button" className="btn btn-light nav-link" onClick={ () => this.allListings() }>Latest</button>
+                        <button type="submit" className="btn btn-light nav-link" onClick={ () => this.allListings() }>Latest</button>
                     </Navbar>
                     <Category onselectCategory = {this.selectCategory} />
                 </div>
