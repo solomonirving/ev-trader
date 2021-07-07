@@ -106,7 +106,7 @@ export default class Home extends Component {
             <div className="home-main">
                 <div className="buttons">
                     <Navbar id="latest">
-                        <button type="submit" className="btn btn-light nav-link" onClick={ () => this.allListings() }>Latest</button>
+                        <button type="submit" className="btn btn-light mb-2 nav-link" onClick={ () => this.allListings() }>Latest</button>
                     </Navbar>
                     <Category onselectCategory = {this.selectCategory} />
                 </div>

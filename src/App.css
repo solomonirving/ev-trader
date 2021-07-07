@@ -266,7 +266,6 @@ button.close {
     font-family: futuraLight;
     color: rgb(113, 113, 113);
 }
-
 #col_1 {
     padding: 0;
 }
@@ -301,6 +300,7 @@ button.close {
 #detail_card_title {
     padding-bottom: 0px !important;
     width: 100%;
+    font-size: 18px !important;
 }
 #details_price {
     font-family: futuraLight !important;
@@ -308,13 +308,12 @@ button.close {
     padding: 0 0 0 20px !important;
 }
 #detail_offer {
-    font-size: 15px !important;
-    padding-left: 5px;
+    font-size: 14px !important;
 }
 .detail_form{
     background-color: rgb(239, 239, 239) !important;
     opacity: 50%;
-    width: 50%;
+    width: 100%;
 }
 .detail_container {
     width: 90%;
@@ -326,7 +325,7 @@ button.close {
     background-color: fff !important;
 }
 .detail-text {
-    font-size: 12px;
+    font-size: 15px;
 }
 #list_main_row {
     padding: 0 15px !important;
@@ -334,7 +333,7 @@ button.close {
     justify-content: space-between;
 }
 #detail_description {
-    font-size: 12px;
+    font-size: 16px;
 }
 /*****************************
             LIST MY CAR

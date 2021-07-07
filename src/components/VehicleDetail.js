@@ -92,17 +92,17 @@ export default class VehicleDetail extends Component {
                             <Card className="rounded shadow border-0 mt-3" id="detail_card_2">
                                 <Card.Body className="rounded mb-2 pl-4" id="detail_card_title">Make An Offer</Card.Body>
                                 
-                                <div className="bg-white d-flex pl-3 justify-content-left">
+                                <div className="bg-white w-20% pl-3 pr-3">
                                     <Form className="rounded  bg-white" id="detail_container"> 
-                                        <Form.Group className="rounded"  controlId="formBasicEmail">
+                                        <Form.Group className="rounded w-100"  controlId="formBasicEmail">
                                             <Form.Control className="bg-light w-100 border-0 detail_form" type="email" placeholder="Name" />
                                         </Form.Group>
                                         <Form.Group className="rounded" controlId="formBasicPassword">
                                             <Form.Control className="bg-light w-100 border-0 detail_form" type="email" placeholder="Email" />
                                         </Form.Group>
-                                        <Form.Group className="bg-white d-flex justify-content-start" controlId="formBasicPassword">
-                                        <Form.Label id="detail_offer" className="bg-white roundedfont-weight-bold pr-1 align-self-center ">Offer Amount</Form.Label>
-                                            <Form.Control className=" w-100 align-self-end ml-0 border-0 detail_form" type="password" placeholder="$0.00" />
+                                        <Form.Group className="bg-white d-flex justify-content-end" controlId="formBasicPassword">
+                                        <Form.Label id="detail_offer" className="bg-white rounded align-self-center ">Offer Amount</Form.Label>
+                                            <Form.Control className="w-50 align-self-center ml-4 border-0 detail_form" type="password" placeholder="$0.00" />
                                         </Form.Group>
                                         <Form.Group className="rounded" controlId="formBasicPassword">
                                             <Form.Control className="align-self-end bg-light w-100 border-0 detail_form" type="password" placeholder="Notes" />
