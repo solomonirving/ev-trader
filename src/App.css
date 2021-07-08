@@ -256,7 +256,7 @@ button.close {
     padding-bottom: 15px !important;
 }
 #card-price {
-    font-weight: 900;
+background-color: white !important;
 }
 
 /*****************************

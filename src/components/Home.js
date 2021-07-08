@@ -4,13 +4,11 @@ import Header from './Header'
 import { Link } from "react-router-dom";
 import { Card, Container, Navbar, Badge } from 'react-bootstrap';
 
-
 export default class Home extends Component {
     constructor(props) {
         super(props)
         this.state = {
             vehicle: [],
-            // searchResults: [],
         }
         this.selectCategory = this.selectCategory.bind(this)
         this.textHandler = this.textHandler.bind(this)
@@ -72,11 +70,6 @@ export default class Home extends Component {
             this.setState({vehicle: data.entries});
     }
 
-    // textHandler = (event) => {
-    //     event.preventDefault();
-    //     console.log(event.target.value)
-    // }
-
     // Function to get search results
      async textHandler(e) {
         console.log(e)
@@ -98,34 +91,28 @@ export default class Home extends Component {
             const data = await response.json()
             this.setState({vehicle: data.entries});
         }
-        // let title = e.target.value;
-        // console.log(title)
-        // const url = `https://cdn.contentstack.io/v3/content_types/copy_of_vehicle_listing/entries?environment=development&query=%7B%22title%22:%20%22${title}%22%7D`;
-        // const response = await fetch(url, requestOptions)
-        // const data = await response.json()
-        //     this.setState({vehicle: data.entries});
-        // console.log(e.target.value)
+
     }
 
     render() {
         return ( 
             <Container fluid>
             < Header search = {this.textHandler} />
-            <div className="home-main">
-                <div className="buttons" id="buttons">
-                    <Navbar id="latest" className="d-flex flex-wrap">
-                        <button type="submit" className="btn btn-light mt-2 mb-2 mr-2 nav-link latestButton align-self-start" onClick={ () => this.allListings() }>All</button>                    
-                    </Navbar>                 
-                    <Category onselectCategory = {this.selectCategory} />
-                </div>
-                <div className="home">
-                    <div className="home-title">
-                        <h5 className="newest-listings"><b>Newest Listings</b></h5>
+                <div className="home-main">
+                    <div className="buttons" id="buttons">
+                        <Navbar id="latest" className="d-flex flex-wrap">
+                            <button type="submit" className="btn btn-light mt-2 mb-2 mr-2 nav-link latestButton align-self-start" onClick={ () => this.allListings() }>All</button>                    
+                        </Navbar>                 
+                        <Category onselectCategory = {this.selectCategory} />
                     </div>
+                    <div className="home">
+                        <div className="home-title">
+                            <h5 className="newest-listings"><b>Newest Listings</b></h5>
+                        </div>
                 </div>
  
                 <div className="contain">                                        
-                        {this.state.vehicle.map(ev => (                        
+                    {this.state.vehicle.map(ev => (                        
                         <div key={ev.uid}>
                             <Link to ={`/vehicle-detail/${ev.uid}`} style={{ textDecoration: 'none', color: 'rgb(113, 113, 113)' }}>
                                 <div className="home-cards">
@@ -141,7 +128,7 @@ export default class Home extends Component {
                                                 , {ev.location.state}
                                             </Card.Text>
                                             <div className="card-text-price">
-                                                <Badge pill variant="light">
+                                                <Badge pill variant="light" id="card-price">
                                                     ${ev.price}
                                                 </Badge>
                                             </div> 
