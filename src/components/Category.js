@@ -39,7 +39,7 @@ export default class Category extends Component {
                     </div>
                 </Navbar>
             </>,
-            document.getElementById('latest')
+            document.getElementById('buttons')
         )
     }
 }

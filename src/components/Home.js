@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Category from './Category';
 import Header from './Header'
 import { Link } from "react-router-dom";
-import { Card, Container, Navbar } from 'react-bootstrap';
+import { Card, Container, Navbar, Badge } from 'react-bootstrap';
 
 
 export default class Home extends Component {
@@ -79,8 +79,7 @@ export default class Home extends Component {
 
     // Function to get search results
      async textHandler(e) {
-        e.preventDefault();
-
+        console.log(e)
         const API_KEY = process.env.REACT_APP_APIKEY
         const DELIVERY_TOKEN = process.env.REACT_APP_DELIVERY_TOKEN
         var myHeaders = new Headers();
@@ -89,16 +88,23 @@ export default class Home extends Component {
         var requestOptions = {
             method: 'GET',
             headers: myHeaders,
-            redirect: 'follow'
+            // redirect: 'follow'
         };
-        let title = e.target.value;
-        console.log(title)
-        const url = `https://cdn.contentstack.io/v3/content_types/copy_of_vehicle_listing/entries?environment=development&query=%7B%22title%22:%20%22${title}%22%7D`;
-        const response = await fetch(url, requestOptions)
-        const data = await response.json()
+        if (!e) {
+            this.allListings();
+        } else {
+            const url = `https://cdn.contentstack.io/v3/content_types/copy_of_vehicle_listing/entries?environment=development&query={"title":"${e}"}`;
+            const response = await fetch(url, requestOptions)
+            const data = await response.json()
             this.setState({vehicle: data.entries});
-        console.log(e.target.value)
-
+        }
+        // let title = e.target.value;
+        // console.log(title)
+        // const url = `https://cdn.contentstack.io/v3/content_types/copy_of_vehicle_listing/entries?environment=development&query=%7B%22title%22:%20%22${title}%22%7D`;
+        // const response = await fetch(url, requestOptions)
+        // const data = await response.json()
+        //     this.setState({vehicle: data.entries});
+        // console.log(e.target.value)
     }
 
     render() {
@@ -106,7 +112,7 @@ export default class Home extends Component {
             <Container fluid>
             < Header search = {this.textHandler} />
             <div className="home-main">
-                <div className="buttons">
+                <div className="buttons" id="buttons">
                     <Navbar id="latest" className="d-flex flex-wrap">
                         <button type="submit" className="btn btn-light mt-2 mb-2 mr-2 nav-link latestButton align-self-start" onClick={ () => this.allListings() }>All</button>                    
                     </Navbar>                 
@@ -124,20 +130,20 @@ export default class Home extends Component {
                             <Link to ={`/vehicle-detail/${ev.uid}`} style={{ textDecoration: 'none', color: 'rgb(113, 113, 113)' }}>
                                 <div className="home-cards">
                                     <Card className="cards shadow mb-3 border-0 bg-white rounded">
-                                        <Card.Img variant="top" src={ev.images[0].url} className=".img-fluid rounded-top" />
+                                    <Card.Img variant="top" src={ev.images[0].url} className=".img-fluid rounded-top" />
                                         <Card.Body className="card-body rounded-bottom">
-                                            <Card.Title className="card-title">{ev.make}</Card.Title>
-                                            <Card.Text className="card-text">
-                                                {ev.model}<span className="card-mileage-span">{ev.odometer} MI</span>
+                                            <Card.Title>{ev.title}</Card.Title>
+                                            <Card.Text>
+                                                {ev.make}, {ev.model}<span className="card-mileage-span">{ev.odometer} MI</span>
                                             </Card.Text>
-                                            <Card.Text className="card-text">
+                                            <Card.Text>
                                                 {ev.location.city}
                                                 , {ev.location.state}
                                             </Card.Text>
                                             <div className="card-text-price">
-                                                <Card.Text className="card-text" id="card-price">
+                                                <Badge pill variant="light">
                                                     ${ev.price}
-                                                </Card.Text>
+                                                </Badge>
                                             </div> 
                                         </Card.Body>
                                     </Card>

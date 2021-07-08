@@ -1,15 +1,19 @@
 import React, { Component } from 'react';
 import Modals from "./Modals";
 import { Link } from "react-router-dom";
-import { Navbar, Nav, FormControl, Form } from 'react-bootstrap';
+import { Navbar, Nav,FormControl, Form } from 'react-bootstrap';
 
 export default class Header extends Component {
     constructor(props) {
         super(props)
         this.state = {
             heading: [],
+            searchValue: ''
         }
+        this.handleChange=this.handleChange.bind(this);
+        this.submitSearch=this.submitSearch.bind(this);
     }
+
     async componentDidMount() {
         const API_KEY = process.env.REACT_APP_APIKEY
         const DELIVERY_TOKEN = process.env.REACT_APP_DELIVERY_TOKEN
@@ -28,6 +32,17 @@ export default class Header extends Component {
                             heading: data.entry.navigation_menu[1].title,
                         });
             // console.log(data.entry.navigation_menu[1].title)
+    }
+
+    handleChange(event) {
+        this.setState({
+           searchValue: event.target.value
+        })
+     }
+
+    submitSearch(event) {
+        event.preventDefault();
+        this.props.search(this.state.searchValue);
     }
 
     render() {
@@ -49,9 +64,10 @@ export default class Header extends Component {
                     <Nav className="mr-auto my-lg-0 justify-content-end" id="navbar-scroll" style={{ maxHeight: '200px' }}>
                         <div className="rounded" id="rounded_2">
 
-                            <Form onSubmit={this.props.search}  className="search">
-                                <FormControl id="header-input" type="text"  placeholder="Search for Car..." className="mr-5 border-0"/>
-                            </Form>
+                        <Form onSubmit={this.submitSearch}  className="search">
+                            <FormControl id="header-input" value={this.state.value} onChange={this.handleChange} type="text"  placeholder="Search for Car..." className="mr-5 border-0"/>
+                        </Form>
+​
 
                         </div>
                         <div className="p5 mr-2 " id="listMyCar">
