@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Navbar, Nav } from 'react-bootstrap';
+import ReactDom from 'react-dom';
 
 export default class Category extends Component {
     state = {
@@ -26,10 +27,10 @@ export default class Category extends Component {
 
     render() {
         
-        return (
-            <div>
+        return ReactDom.createPortal(
+            <>
                 <Navbar id="category_items">
-                    <div className="btn-group ml-2 d-flex align-content-between flex-wrap" role="group" id="basic-navbar-nav">
+                    <div className="btn-group d-flex align-content-between flex-wrap" role="group" id="basic-navbar-nav">
                         {this.state.headers.map(ev => (
                             <Nav key={ev.uid}>  
                                 <button type="button" value={ev.uid} className="btn btn-light mr-3 mb-2 nav-link" onClick={this.props.onselectCategory}>{ev.title}</button>
@@ -37,7 +38,8 @@ export default class Category extends Component {
                         ))}
                     </div>
                 </Navbar>
-            </div>
+            </>,
+            document.getElementById('latest')
         )
     }
 }

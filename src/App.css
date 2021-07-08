@@ -108,7 +108,6 @@ button.close {
     overflow: hidden !important;
     background-color: white !important;
 }
-
 .ml-auto, rounded {
     background-color: white !important;
 }
@@ -205,7 +204,10 @@ button.close {
     margin: 0 8px 0 0 !important;
     padding: 0 !important;
 }
-
+.latestButton {
+    background-color: rgb(96, 127, 156) !important;
+    color: #fff !important;
+}
 .buttons {
     display: flex;
     align-content: center;
@@ -213,9 +215,6 @@ button.close {
 .newest-listings {
     font-family: futuraLight;
 }
-/* .home-main {
-    overflow: hidden;
-} */
 .home-title {
     color: rgb(96, 127, 156);
     font-family: futuraMedium;
@@ -336,6 +335,7 @@ button.close {
 #detail_description {
     font-size: 16px;
 }
+
 /*****************************
             LIST MY CAR
 *****************************/
@@ -356,7 +356,6 @@ button.close {
     color: rgb(96, 127, 156);
     font-size: 20px;
 }
-
 .list_form {
     background-color: rgb(239,239,239) !important;
     opacity: 50% !important;
@@ -422,18 +421,14 @@ svg {
     .home-title {
         margin-left: 3px !important;
     }
-    /* #main_row {
-        padding-left: 2%;
-        padding-right: 1.6%;
-    } */
-  }
-
+}
 
 @media (max-width: 790px) and  (min-width: 760px) {
     .navbar-toggler {
         margin-right: 20px !important;
     }
 }
+
 @media (max-width: 760px) {
 
     #modal_buttons {
@@ -483,13 +478,10 @@ svg {
         margin-bottom: 3px !important;
     }
     #logInButton {
-        /* padding-left: 0 !important; */
         margin: 0 !important;
         width: 100% !important;
-        /* color: rgb(113, 113, 113) !important; */
         background-color: #607f9c !important;
     }
-
     .navbar-collapse {
         display: flex;
         flex-direction: row;
@@ -514,10 +506,6 @@ svg {
     #detail_card {
         width: 100%;
     }
-    /* #header_container {
-        padding-right: 20px !important;
-    } */
-
     .home-title {
         margin-left: 6px !important;
     }
@@ -532,6 +520,7 @@ svg {
         margin-left: 0 !important;
     }  
 }
+
 @media (max-width: 600px) {
     #modal_buttons {
         margin-left: 0 !important;
@@ -548,15 +537,7 @@ svg {
      flex-direction: column !important;
      justify-content: center !important;   
     }
-/* 
-    #header_container {
-        padding-right: 25px !important;
-    } */
     .home-title {
         margin-left: 6px !important;
     }
-    /* #main_row {
-        padding-left: 5%;
-        padding-right: 5%;
-    } */
   }
