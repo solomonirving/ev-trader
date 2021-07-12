@@ -13,8 +13,14 @@
 /*****************************
             HEADER 
 *****************************/
+#rounded_2 {
+    /* background-color: white; */
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-evenly; */
+}
 #header-input {
-    width: 300px !important;
+    width: 230px !important;
     margin-bottom: 3px !important;
 }
 .nav-bar {
@@ -285,8 +291,9 @@ background-color: white !important;
     background-color: none; 
 }
 #detail_thumbnail_2 {
+    
     width: 21%;
-    margin: 16px 0 8px 0 !important;
+    margin: 8px 0 8px 0 !important;
 }
 #column {
     padding-right: 0;
@@ -364,12 +371,9 @@ background-color: white !important;
 #list_card {
     width: 60%;
 }
-#list_text_area{
-    border: none !important;
-}
 textarea {
     background-color: rgb(239,239,239) !important;
-    border: none !important; 
+    /* border: none !important;  */
     opacity: 50% !important;
 }
 .vehicle_detail_cont_1 {
@@ -456,6 +460,9 @@ svg {
     }
     #rounded_2 {
         background-color: white;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
     }
     #navbar-scroll {
         padding: 11px !important;

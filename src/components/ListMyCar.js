@@ -15,14 +15,14 @@ export default class ListMyCar extends Component {
                                 <div className="bg-white d-flex justify-content-center">
                                     <Form className="rounded bg-white detail_container">                                          
                                         <Form.Group className="rounded"  controlId="formBasicEmail">
-                                            <Form.Control className="bg-light w-100 border-0 detail_form" type="email" placeholder="Title" />
+                                            <Form.Control className="bg-light w-100 detail_form" type="email" placeholder="Title" />
                                         </Form.Group>
                                         <Form.Group className="rounded"  controlId="formBasicEmail">
-                                            <Form.Control className="bg-light w-100 border-0 detail_form" type="email" placeholder="Sellers Name" />
+                                            <Form.Control className="bg-light w-100 detail_form" type="email" placeholder="Sellers Name" />
                                         </Form.Group>
 
                                         <div className="vehicle_detail_cont_1">
-                                        <Form.Control className="border-0 w-10 list_form" as="select" defaultValue="City">
+                                            <Form.Control className="w-10 list_form" as="select" defaultValue="City">
                                                 <option disabled>City</option>
                                                 <option>Los Angeles</option>
                                                 <option>San Francisco</option>
@@ -34,8 +34,8 @@ export default class ListMyCar extends Component {
                                                 <option>Vallejo</option>
                                                 <option>Carson City</option>
                                                 <option>Las Vegas</option> 
-                                        </Form.Control>
-                                        <Form.Control className="border-0 ml-5 w-10 list_form" as="select" defaultValue="State">
+                                            </Form.Control>
+                                            <Form.Control className="ml-5 w-10 list_form" as="select" defaultValue="State">
                                                 <option disabled>State</option>
                                                 <option>CA</option>
                                                 <option>NV</option>
@@ -46,7 +46,8 @@ export default class ListMyCar extends Component {
                                                 <option>WA</option>
                                                 <option>HA</option>
                                                 <option>VA</option>
-                                                <option>NJ</option>                                        </Form.Control>
+                                                <option>NJ</option>                                        
+                                            </Form.Control>
                                         </div>
                                     </Form>
                                 </div>
@@ -59,7 +60,7 @@ export default class ListMyCar extends Component {
                                         <div className="bg-white rounded w-100 py-1 px-3">
                                             <div className="rounded bg-white" id="detail_card_title">Price</div>
                                             <Form.Group className="rounded w-100"  controlId="formBasicEmail">
-                                            <Form.Control className="bg-light w-100 border-0 detail_form" type="email" placeholder="$0.00" />
+                                            <Form.Control className="bg-light w-100 detail_form" type="email" placeholder="$0.00" />
                                             </Form.Group>
                                         </div> 
                                     </div>
@@ -75,34 +76,34 @@ export default class ListMyCar extends Component {
 
                                         <Row>
                                             <Col className="bg-white">
-                                            <Form.Control className="border-0 w-10 list_form" as="select" defaultValue="Year">
-                                                        <option disabled>Year</option>
-                                                        <option>2011</option>
-                                                        <option>2012</option>
-                                                        <option>2013</option>
-                                                        <option>2014</option>
-                                                        <option>2015</option>
-                                                        <option>2016</option>
-                                                        <option>2017</option>
-                                                        <option>2018</option>
-                                                        <option>2019</option>
-                                                        <option>2020</option>
-                                                        <option>2021</option>
-                                            </Form.Control>  
+                                                <Form.Control className="w-10 list_form" as="select" defaultValue="Year">
+                                                    <option disabled>Year</option>
+                                                    <option>2011</option>
+                                                    <option>2012</option>
+                                                    <option>2013</option>
+                                                    <option>2014</option>
+                                                    <option>2015</option>
+                                                    <option>2016</option>
+                                                    <option>2017</option>
+                                                    <option>2018</option>
+                                                    <option>2019</option>
+                                                    <option>2020</option>
+                                                    <option>2021</option>
+                                                </Form.Control>  
                                             </Col>
                                             <Col className="bg-white">
-                                            <Form.Control className="border-0 w-10 list_form" as="select" defaultValue="Make">
-                                                        <option disabled>Make</option>
-                                                        <option>Nissan</option>
-                                                        <option>Hyundai</option>
-                                                        <option>Ford</option>
-                                                        <option>Chevrolet</option>
-                                                        <option>BMW</option>
-                                                        <option>Audi</option>
-                                                        <option>Porsche</option>
-                                                        <option>Aptera</option>
-                                                        <option>Lucid</option>
-                                                        <option>Tesla</option>
+                                            <Form.Control className="w-10 list_form" as="select" defaultValue="Make">
+                                                <option disabled>Make</option>
+                                                <option>Nissan</option>
+                                                <option>Hyundai</option>
+                                                <option>Ford</option>
+                                                <option>Chevrolet</option>
+                                                <option>BMW</option>
+                                                <option>Audi</option>
+                                                <option>Porsche</option>
+                                                <option>Aptera</option>
+                                                <option>Lucid</option>
+                                                <option>Tesla</option>
                                             </Form.Control>
                                             </Col>
                                         </Row>
@@ -110,15 +111,15 @@ export default class ListMyCar extends Component {
 
                                         <Row className="mb-3 bg-white">
                                             <Col className="bg-white rounded"> 
-                                            <Form.Control className="border-0 detail_form_2" type="email" placeholder="Model" />
+                                            <Form.Control className="detail_form_2" type="email" placeholder="Model" />
                                             </Col> 
                                             <Col className="bg-white rounded">
-                                            <Form.Control className="border-0 detail_form_2" type="email" placeholder="Color" />
+                                            <Form.Control className="detail_form_2" type="email" placeholder="Color" />
                                             </Col>
                                         </Row>
 
                                         <Form.Group className="bg-white rounded" controlId="formBasicPassword">
-                                            <Form.Control className="align-self-end bg-light w-4 border-0" id="detail_form_3" type="password" placeholder="Odometer" />
+                                            <Form.Control className="align-self-end bg-light w-4" id="detail_form_3" type="password" placeholder="Odometer" />
                                         </Form.Group>
 
                                         <Row>
@@ -162,7 +163,7 @@ export default class ListMyCar extends Component {
                                         </Row>
 
                                         <Form.Group className="mb-3 mt-3 rounded" id="list_text_area" controlId="exampleForm.ControlTextarea1" placeholder="Description">
-                                            <Form.Control  placeholder="Description" as="textarea" rows={3} />
+                                            <Form.Control placeholder="Description" as="textarea" rows={3} />
                                         </Form.Group>
 
                                         <Button id="detail_submit" className="align-self-end mb-3 w-60 border-0" variant="primary" type="submit">

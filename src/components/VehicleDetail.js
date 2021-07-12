@@ -95,17 +95,17 @@ export default class VehicleDetail extends Component {
                                 <div className="bg-white w-20% pl-3 pr-3">
                                     <Form className="rounded  bg-white" id="detail_container"> 
                                         <Form.Group className="rounded w-100"  controlId="formBasicEmail">
-                                            <Form.Control className="bg-light w-100 border-0 detail_form" type="email" placeholder="Name" />
+                                            <Form.Control className="bg-light w-100 detail_form" type="email" placeholder="Name" />
                                         </Form.Group>
                                         <Form.Group className="rounded" controlId="formBasicPassword">
-                                            <Form.Control className="bg-light w-100 border-0 detail_form" type="email" placeholder="Email" />
+                                            <Form.Control className="bg-light w-100 detail_form" type="email" placeholder="Email" />
                                         </Form.Group>
                                         <Form.Group className="bg-white d-flex justify-content-end" controlId="formBasicPassword">
                                         <Form.Label id="detail_offer" className="bg-white rounded align-self-center ">Offer Amount</Form.Label>
-                                            <Form.Control className="w-50 align-self-center ml-4 border-0 detail_form" type="password" placeholder="$0.00" />
+                                            <Form.Control className="w-50 align-self-center ml-4 detail_form" type="password" placeholder="$0.00" />
                                         </Form.Group>
                                         <Form.Group className="rounded" controlId="formBasicPassword">
-                                            <Form.Control className="align-self-end bg-light w-100 border-0 detail_form" type="password" placeholder="Notes" />
+                                            <Form.Control className="align-self-end bg-light w-100 detail_form" type="password" placeholder="Notes" />
                                         </Form.Group>
                                         <Button id="detail_submit" className="align-self-end mb-3 w-100 border-0" variant="primary" type="submit">
                                             Send Offer
