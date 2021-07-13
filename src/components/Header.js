@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Modals from "./Modals";
 import { Link } from "react-router-dom";
-import { Navbar, Nav,FormControl, Form, Col } from 'react-bootstrap';
+import { Navbar, Nav,FormControl, Form } from 'react-bootstrap';
 
 export default class Header extends Component {
     constructor(props) {
@@ -63,17 +63,6 @@ export default class Header extends Component {
                     <Navbar.Collapse  className="navbar-collapse" >
                     <Nav className="mr-auto my-lg-0 justify-content-end" id="navbar-scroll" style={{ maxHeight: '200px' }}>
                         <div className="rounded" id="rounded_2">
-
-                        <Form className="mr-3 ml-3">
-                            <Form.Control 
-                                as="select"
-                                id="inlineFormCustomSelect"
-                                custom
-                                >
-                                <option value="1">Contentstack</option>
-                                <option value="2">Algolia</option>
-                            </Form.Control>
-                        </Form>
 
                         <Form onSubmit={this.submitSearch}  className="search">
                             <FormControl id="header-input" value={this.state.value} onChange={this.handleChange} type="text"  placeholder="Search for Car..." className="mr-4"/>
