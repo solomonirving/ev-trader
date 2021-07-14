@@ -254,7 +254,7 @@ button.close {
     font-family: futuraLight;
     padding-left: 10px;
 }
-.contain {
+.contain, .ais-Hits-list {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     column-gap: 15px;
@@ -409,10 +409,37 @@ svg {
 }
 
 /*****************************
+            ALGOLIA
+*****************************/
+.algolia-header {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 15px;
+    align-items: center;
+}
+.ais-Hits-item {
+    padding: 0;
+    box-shadow: none;
+    background: none;
+    width: 100%;
+}
+.ais-SearchBox-form {
+    margin-left: 100px;
+    width: 100%;
+    height: 38px;
+}
+.ais-Hits-list {
+    padding: 15px 15px 0 15px;
+}
+.algolia {
+    overflow: hidden;
+}
+
+/*****************************
             MEDIA QUERIES 
 *****************************/
 @media (max-width: 1000px) {
-    .contain {
+    .contain, .ais-Hits-list{
       grid-template-columns: repeat(3, 1fr);
       row-gap: 20px;
       margin: 0 !important; 
@@ -496,7 +523,7 @@ svg {
         margin-bottom: 20px;
         overflow: hidden;
     }
-    .contain {
+    .contain, .ais-Hits-list {
       grid-template-columns: repeat(2, 1fr);
       row-gap: 20px;
       margin: 0 !important; 
@@ -518,7 +545,10 @@ svg {
     }
     .modal-dialog .modal_content{
         width: 200px !important;
-        }    
+    }
+    .ais-SearchBox-form {
+        margin-left: 55px;
+    }    
   }
 
 @media (max-width: 630px) and  (min-width: 600px) {
@@ -532,7 +562,7 @@ svg {
     #modal_buttons {
         margin-left: 0 !important;
     }
-    .contain {
+    .contain, .ais-Hits-list {
       grid-template-columns: 1fr;
       row-gap: 20px;
       margin: 0 !important; 

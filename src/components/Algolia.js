@@ -5,12 +5,12 @@ import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-dom';
 import { Card, Container, Badge } from 'react-bootstrap';
 
 
+
 const searchClient = algoliasearch('VQI5TOVS3P', 'c303f0377410aa3d69834c9fafcfd7c4');
 
 const Hit = ({ hit }) => 
-
-    <Container fluid>
-        <div className="contain">                                        
+    // <Container fluid>
+        <div className="algolia">                                        
             <Link to ={'/algolia'} style={{ textDecoration: 'none', color: 'rgb(113, 113, 113)' }}>
                 <div className="home-cards">
                     <Card className="cards shadow mb-3 border-0 bg-white rounded">
@@ -34,7 +34,9 @@ const Hit = ({ hit }) =>
                 </div>
             </Link>
         </div>
-    </Container>;
+    // </Container>
+
+    
 
 export default class Algolia extends Component {
 
@@ -45,10 +47,12 @@ export default class Algolia extends Component {
         return (
             
             <InstantSearch searchClient={searchClient} indexName="Ev-trader">
-            
-            <SearchBox 
-              reset={<img src="/reset.png" alt=""/>}
-              />
+                <header className="algolia-header">
+                    <Link to ={`/`}>
+                        <img className="img-fluid" src="https://images.contentstack.io/v3/assets/blt54c8c0f2c2a9678f/blt4585c7e2b244b118/60c9269883f9fe49a6fed270/evtrader-logo.png" />          
+                    </Link>
+                    <SearchBox translations={{placeholder: "Algolia Search"}}/>
+                </header>
             <Hits hitComponent={Hit} />
             </InstantSearch>
         )
