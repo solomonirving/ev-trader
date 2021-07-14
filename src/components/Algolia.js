@@ -2,18 +2,18 @@ import React, { Component } from 'react';
 import algoliasearch from 'algoliasearch';
 import { Link } from "react-router-dom";
 import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-dom';
-import { Card, Container, Badge } from 'react-bootstrap';
+import { Card, Badge } from 'react-bootstrap';
 
 
-
-const searchClient = algoliasearch('VQI5TOVS3P', 'c303f0377410aa3d69834c9fafcfd7c4');
+const API_KEY = process.env.REACT_APP_ALGOLIA_APPLICATION_ID
+const SEARCH_KEY = process.env.REACT_APP_ALGOLIA_SEARCH_API_KEY
+const searchClient = algoliasearch(API_KEY, SEARCH_KEY);
 
 const Hit = ({ hit }) => 
-    // <Container fluid>
         <div className="algolia">                                        
             <Link to ={'/algolia'} style={{ textDecoration: 'none', color: 'rgb(113, 113, 113)' }}>
                 <div className="home-cards">
-                    <Card className="cards shadow mb-3 border-0 bg-white rounded">
+                    <Card className="cards mb-3 border-0 bg-white rounded">
                     <Card.Img variant="top" src={hit.images[0].url} className=".img-fluid rounded-top" />
                         <Card.Body className="card-body rounded-bottom">
                             <Card.Title>{hit.title}</Card.Title>
@@ -34,18 +34,12 @@ const Hit = ({ hit }) =>
                 </div>
             </Link>
         </div>
-    // </Container>
-
-    
 
 export default class Algolia extends Component {
 
 
-    
     render() {
-
         return (
-            
             <InstantSearch searchClient={searchClient} indexName="Ev-trader">
                 <header className="algolia-header">
                     <Link to ={`/`}>
