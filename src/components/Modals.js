@@ -42,7 +42,7 @@ export default class Modals extends Component {
     render() {
         return (
           <div>
-          <button type="button" className="btn btn-block btn-light nav-link-2"id="logInButton" onClick={this.openModal}>{this.state.heading}</button>
+          <button type="button" className="btn btn-block btn-light nav-link-2 p-2" id="logInButton" onClick={this.openModal}>{this.state.heading}</button>
         <Container>
               <Modal className="modal-dialog-centered" id="modal" show={this.state.isOpen} onHide={this.closeModal}>
                 <Modal.Header closeButton className="modal-header">

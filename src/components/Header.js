@@ -64,17 +64,6 @@ export default class Header extends Component {
                     <Nav className="mr-auto my-lg-0 justify-content-end" id="navbar-scroll" style={{ maxHeight: '200px' }}>
                         <div className="rounded" id="rounded_2">
 
-                        <Form className="mr-3 ml-3">
-                            <Form.Control 
-                                as="select"
-                                id="inlineFormCustomSelect"
-                                custom
-                                >
-                                <option value="1">Contentstack</option>
-                                <option value="2">Algolia</option>
-                            </Form.Control>
-                        </Form>
-
                         <Form onSubmit={this.submitSearch}  className="search">
                             <FormControl id="header-input" value={this.state.value} onChange={this.handleChange} type="text"  placeholder="Search for Car..." className="mr-4"/>
                         </Form>
@@ -82,9 +71,13 @@ export default class Header extends Component {
                         </div>
                         
                         <div className="p5 mr-2 " id="listMyCar">
+                            <Link to ={`/algolia`} style={{ textDecoration: 'none', color: 'rgb(113, 113, 113)' }}>
+                                <button type="button" className="btn btn-light nav-link-2 mr-2" id="list-my-vehicle">Algolia</button>
+                            </Link>
                             <Link to ={`/list-my-car`} style={{ textDecoration: 'none', color: 'rgb(113, 113, 113)' }}>
                                 <button type="button" className="btn btn-light nav-link-2" id="list-my-vehicle">{this.state.heading}</button>
                             </Link>
+
                         </div>
                         <Modals />                        
                     </Nav>

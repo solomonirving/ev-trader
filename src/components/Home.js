@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Category from './Category';
-import Header from './Header'
+import Header from './Header';
 import { Link } from "react-router-dom";
 import { Card, Container, Navbar, Badge } from 'react-bootstrap';
 
@@ -97,49 +97,51 @@ export default class Home extends Component {
     render() {
         return ( 
             <Container fluid>
-            < Header search = {this.textHandler} />
-                <div className="home-main">
-                    <div className="buttons" id="buttons">
-                        <Navbar id="latest" className="d-flex flex-wrap">
-                            <button type="submit" className="btn btn-light mt-2 mb-2 mr-2 nav-link latestButton align-self-start" onClick={ () => this.allListings() }>All</button>                    
-                        </Navbar>                 
-                        <Category onselectCategory = {this.selectCategory} />
-                    </div>
-                    <div className="home">
-                        <div className="home-title">
-                            <h5 className="newest-listings"><b>Newest Listings</b></h5>
+                < Header search = {this.textHandler} />
+
+                    <div className="home-main">
+                        
+                        <div className="buttons" id="buttons">
+                            <Navbar id="latest" className="d-flex flex-wrap">
+                                <button type="submit" className="btn btn-light mt-2 mb-2 mr-2 nav-link latestButton align-self-start" onClick={ () => this.allListings() }>All</button>                    
+                            </Navbar>                 
+                            <Category onselectCategory = {this.selectCategory} />
                         </div>
-                </div>
- 
-                <div className="contain">                                        
-                    {this.state.vehicle.map(ev => (                        
-                        <div key={ev.uid}>
-                            <Link to ={`/vehicle-detail/${ev.uid}`} style={{ textDecoration: 'none', color: 'rgb(113, 113, 113)' }}>
-                                <div className="home-cards">
-                                    <Card className="cards shadow mb-3 border-0 bg-white rounded">
-                                    <Card.Img variant="top" src={ev.images[0].url} className=".img-fluid rounded-top" />
-                                        <Card.Body className="card-body rounded-bottom">
-                                            <Card.Title>{ev.title}</Card.Title>
-                                            <Card.Text>
-                                                {ev.make}, {ev.model}<span className="card-mileage-span">{ev.odometer} MI</span>
-                                            </Card.Text>
-                                            <Card.Text>
-                                                {ev.location.city}
-                                                , {ev.location.state}
-                                            </Card.Text>
-                                            <div className="card-text-price">
-                                                <Badge pill variant="light" id="card-price">
-                                                    ${ev.price}
-                                                </Badge>
-                                            </div> 
-                                        </Card.Body>
-                                    </Card>
+                        <div className="home">
+                            <div className="home-title">
+                                <h5 className="newest-listings"><b>Newest Listings</b></h5>
+                            </div>
+                        </div>
+    
+                        <div className="contain">                                        
+                            {this.state.vehicle.map(ev => (                        
+                                <div key={ev.uid}>
+                                    <Link to ={`/vehicle-detail/${ev.uid}`} style={{ textDecoration: 'none', color: 'rgb(113, 113, 113)' }}>
+                                        <div className="home-cards">
+                                            <Card className="cards shadow mb-3 border-0 bg-white rounded">
+                                            <Card.Img variant="top" src={ev.images[0].url} className=".img-fluid rounded-top" />
+                                                <Card.Body className="card-body rounded-bottom">
+                                                    <Card.Title>{ev.title}</Card.Title>
+                                                    <Card.Text>
+                                                        {ev.make}, {ev.model}<span className="card-mileage-span">{ev.odometer} MI</span>
+                                                    </Card.Text>
+                                                    <Card.Text>
+                                                        {ev.location.city}
+                                                        , {ev.location.state}
+                                                    </Card.Text>
+                                                    <div className="card-text-price">
+                                                        <Badge pill variant="light" id="card-price">
+                                                            ${ev.price}
+                                                        </Badge>
+                                                    </div> 
+                                                </Card.Body>
+                                            </Card>
+                                        </div>
+                                    </Link>
                                 </div>
-                            </Link>
+                            ))}
                         </div>
-                    ))}
-                </div>
-            </div>
+                    </div>
             </Container>
         )
     }
