@@ -39,10 +39,10 @@ export default class VehicleDetail extends Component {
 
     render() {
         return (
-            <Container fluid>
+            <Container>
             <Header />
             <div>
-                <Container fluid id="vehicle_detail_container">
+                <Container id="vehicle_detail_container">
                     <Row id="main_row">
                         <Col id="col_1" sm={12} md={8}>
                             <Row className="rounded mt-2" id="detail_image_container">
@@ -57,7 +57,7 @@ export default class VehicleDetail extends Component {
                             </Row>
 
                             <Row className="rounded" id="detail_image_container">
-                                <Card className="rounded shadow mt-2  border-0 mb-2 bg-white py-3" id="detail_card">
+                                <Card className="rounded shadow mt-3  border-0 mb-2 bg-white py-3" id="detail_card">
                                     <div className="detail_box bg-white">
                                     <div className="bg-white pl-3">
                                         <div className="rounded bg-white p-1" id="detail_card_title">Sellers Info</div>
@@ -77,7 +77,7 @@ export default class VehicleDetail extends Component {
                             </Row>
                                             
                             <Row id="detail_image_container">
-                                <Card className="rounded border-0 shadow mt-2 mb-2" id="detail_card">
+                                <Card className="rounded border-0 shadow mt-3 mb-2" id="detail_card">
                                     <Card.Body className="rounded" id="detail_card_title">Description</Card.Body>
                                     <Card.Body className="rounded" id="detail_description">{this.state.details.description}</Card.Body>
                                 </Card>
@@ -95,19 +95,19 @@ export default class VehicleDetail extends Component {
                                 <div className="bg-white w-20% pl-3 pr-3">
                                     <Form className="rounded  bg-white" id="detail_container"> 
                                         <Form.Group className="rounded w-100"  controlId="formBasicEmail">
-                                            <Form.Control className="bg-light w-100 detail_form" type="email" placeholder="Name" />
+                                            <Form.Control className="bg-light w-100 detail_form" type="text" placeholder="Name" />
                                         </Form.Group>
                                         <Form.Group className="rounded" controlId="formBasicPassword">
                                             <Form.Control className="bg-light w-100 detail_form" type="email" placeholder="Email" />
                                         </Form.Group>
                                         <Form.Group className="bg-white d-flex justify-content-end" controlId="formBasicPassword">
                                         <Form.Label id="detail_offer" className="bg-white rounded align-self-center ">Offer Amount</Form.Label>
-                                            <Form.Control className="w-50 align-self-center ml-4 detail_form" type="password" placeholder="$0.00" />
+                                            <Form.Control className="w-50 align-self-center ml-4 detail_form" type="text" placeholder="$0.00" />
                                         </Form.Group>
                                         <Form.Group className="rounded" controlId="formBasicPassword">
-                                            <Form.Control className="align-self-end bg-light w-100 detail_form" type="password" placeholder="Notes" />
+                                            <Form.Control className="align-self-end bg-light w-100 detail_form" type="text" placeholder="Notes" />
                                         </Form.Group>
-                                        <Button id="detail_submit" className="align-self-end mb-3 w-100 border-0" variant="primary" type="submit">
+                                        <Button size="lg" id="detail_submit" className="align-self-end mb-3 w-100 border-0" variant="primary" type="submit">
                                             Send Offer
                                         </Button>
                                     </Form>

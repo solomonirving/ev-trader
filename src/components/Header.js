@@ -72,10 +72,10 @@ export default class Header extends Component {
                         
                         <div className="p5 mr-2 " id="listMyCar">
                             <Link to ={`/algolia`} style={{ textDecoration: 'none', color: 'rgb(113, 113, 113)' }}>
-                                <button type="button" className="btn btn-light nav-link-2 mr-2" id="list-my-vehicle">Algolia</button>
+                                <button type="button" className="btn nav-link-2 mr-2" id="list-my-vehicle">Algolia</button>
                             </Link>
                             <Link to ={`/list-my-car`} style={{ textDecoration: 'none', color: 'rgb(113, 113, 113)' }}>
-                                <button type="button" className="btn btn-light nav-link-2" id="list-my-vehicle">{this.state.heading}</button>
+                                <button type="button" className="btn nav-link-2" id="list-my-vehicle">{this.state.heading}</button>
                             </Link>
 
                         </div>

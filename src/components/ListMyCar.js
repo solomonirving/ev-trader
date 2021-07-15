@@ -5,7 +5,7 @@ import { Container, Col, Row, Card, Form, Button } from 'react-bootstrap';
 export default class ListMyCar extends Component {
     render() {
         return (
-                <Container fluid id="vehicle_detail_container">
+                <Container id="vehicle_detail_container">
                 <Header />
                     <Row className="justify-space-around" id="list_main_row">
                         <Col className="seller_details" id="col_1" sm={12} md={5}>
@@ -55,7 +55,7 @@ export default class ListMyCar extends Component {
                             </Row>
                                             
                             <Row className="rounded" id="detail_image_container">
-                                <Card className="rounded shadow border-0 mt-3 mb-2 bg-white" id="list_card">
+                                <Card className="rounded shadow border-0 mt-4 mb-2 bg-white" id="list_card">
                                     <div className="detail_box bg-white w-100 rounded">
                                         <div className="bg-white rounded w-100 py-1 px-3">
                                             <div className="rounded bg-white" id="detail_card_title">Price</div>
@@ -119,7 +119,7 @@ export default class ListMyCar extends Component {
                                         </Row>
 
                                         <Form.Group className="bg-white rounded" controlId="formBasicPassword">
-                                            <Form.Control className="align-self-end bg-light w-4" id="detail_form_3" type="password" placeholder="Odometer" />
+                                            <Form.Control className="align-self-end bg-light w-4" id="detail_form_3" type="text" placeholder="Odometer" />
                                         </Form.Group>
 
                                         <Row>
@@ -167,7 +167,7 @@ export default class ListMyCar extends Component {
                                         </Form.Group>
 
                                         <Button id="detail_submit" className="align-self-end mb-3 w-60 border-0" variant="primary" type="submit">
-                                            Upload Image
+                                            Submit Listing
                                         </Button>
                                     </Form>
                                 </div>
