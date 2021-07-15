@@ -8,11 +8,12 @@ import VehicleDetail from "./components/VehicleDetail";
 import "./App.css";
 
 function App() {
-  
+
+
   return (
     <div className="App">
       <Router>
-      {/* <Header /> */}
+      {/* <Header search = {this.textHandler} /> */}
           <Switch>
             <Route exact path="/" component={ Home }/>
             <Route exact path="/algolia" component={ Algolia }/>

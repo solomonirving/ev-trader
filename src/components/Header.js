@@ -65,12 +65,12 @@ export default class Header extends Component {
                         <div className="rounded" id="rounded_2">
 
                         <Form onSubmit={this.submitSearch}  className="search">
-                            <FormControl id="header-input" value={this.state.value} onChange={this.handleChange} type="text"  placeholder="Search for Car..." className="mr-4"/>
+                            <FormControl id="header-input" value={this.state.value} onChange={this.handleChange} type="text"  placeholder="Search for Car..." className="mr-2"/>
                         </Form>
     ​
                         </div>
                         
-                        <div className="p5 mr-2 " id="listMyCar">
+                        <div className="p-0 mr-2 " id="listMyCar">
                             <Link to ={`/algolia`} style={{ textDecoration: 'none', color: 'rgb(113, 113, 113)' }}>
                                 <button type="button" className="btn nav-link-2 mr-2" id="list-my-vehicle">Algolia</button>
                             </Link>
