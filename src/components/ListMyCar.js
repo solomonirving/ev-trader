@@ -12,8 +12,6 @@ export default class ListMyCar extends Component {
             states: '',
             price: '',
             year: '',
-            clean: '',
-            salvage: '',
             make: '',
             model: '',
             color: '',
@@ -28,6 +26,10 @@ export default class ListMyCar extends Component {
     changeHandler = (e) => {
         this.setState({ [e.target.name]: e.target.value })
     }
+
+    // checkHandler = (e) => {
+    //     this.setState({ [e.target.name]: e.target.value })
+    // }
 
     handleSubmit = (e) => {
         e.preventDefault();
@@ -57,15 +59,11 @@ export default class ListMyCar extends Component {
                 "price": parseInt(this.state.price),
                 "year": parseInt(this.state.year),
                 "make": this.state.make,
-
-                "clean": this.state.clean,
-                "salvage": this.state.salvage,
-
+                "title_status": this.state.status,
                 "model": this.state.model,
                 "color": this.state.color,
                 "odometer": parseInt(this.state.odometer),
-                "status": parseInt(this.state.status),
-                "condition": parseInt(this.state.condition),
+                "condition": this.state.condition,
                 "description": this.state.description,
             }
         });
@@ -81,11 +79,11 @@ export default class ListMyCar extends Component {
             .then(response => response.text())
             .then(result => console.log(result))
             .catch(error => console.log('error', error));
-        console.log(this.state.status)
+        // console.log(typeof this.state.status)
     }
 
     render() {
-        const { title, seller, clean, salvage, states, city, price, year, make, model, color, odometer, status, condition, description } = this.state
+        const { title, seller, status, states, city, price, year, make, model, color, odometer, condition, description } = this.state
         return (
                 <Container id="vehicle_detail_container">
                 <Header />
@@ -93,7 +91,7 @@ export default class ListMyCar extends Component {
                         <Col className="seller_details" id="col_1" sm={12} md={5}>
                             <Row className="rounded" id="detail_image_container">
                             <Card className="rounded border-0 shadow mt-2" id="detail_card_2">
-                                <Card.Body className="rounded mb-2 pl-4 py-2" id="detail_card_title">Seller Details</Card.Body>
+                                <Card.Body className="rounded mb-2 pl-4 py-2" id="detail_card_title">Seller Details <span className="text-danger">*</span> </Card.Body>
                                 <div className="bg-white d-flex justify-content-center">
                                     <Form className="rounded bg-white detail_container">                                          
                                         <Form.Group className="rounded">
@@ -121,7 +119,7 @@ export default class ListMyCar extends Component {
                                                 <option>State</option>
                                                 <option>CA</option>
                                                 <option>FL</option>
-                                                <option>HA</option>
+                                                <option>HI</option>
                                                 <option>NJ</option>                                        
                                                 <option>NV</option>
                                                 <option>NY</option>
@@ -205,36 +203,28 @@ export default class ListMyCar extends Component {
 
                                         <Row>
                                             <Col className="bg-white">
-                                                <Card.Body className="rounded pl-0 pt-0"  id="detail_card_title">Title Status</Card.Body>
-                                                <Form.Group className="mb-3 bg-white"  type="radio" id="formGridCheckbox">
-                                                    <Form.Check className="bg-white" onChange={this.changeHandler} name="clean" value={clean} type="radio" name="groupOptions1" label="Clean" />
-                                                    <Form.Check className="bg-white" onChange={this.changeHandler} name="salvage" value={salvage} type="radio" name="groupOptions1" label="Salvage" />
-                                                </Form.Group>
+                                                <Card.Body className="rounded pl-0 pt-0"  id="detail_card_title">Title Status <span className="text-danger">*</span> </Card.Body>
+                                                    <Form.Group className="mb-3 bg-white" id="formGridCheckbox">
+                                                        <Form.Check className="bg-white" name="status" onChange={this.changeHandler} checked={status === "Clean"} value="Clean" type="radio" label="Clean" />       
+                                                        <Form.Check className="bg-white" name="status" onChange={this.changeHandler} checked={status === "Salvage"} value="Salvage" type="radio" label="Salvage" />
+                                                    </Form.Group>
                                             </Col>
 
                                             <Col className="bg-white">
-                                            <Card.Body className="bg-white rounded pl-0 pt-0" onChange={this.changeHandler} name="condition" value={condition} id="detail_card_title">Condition</Card.Body>
+                                            <Card.Body className="bg-white rounded pl-0 pt-0" id="detail_card_title">Condition <span className="text-danger">*</span></Card.Body>
                                                 <Row className="bg-white">
                                                     <Col className="bg-white">
                                                         <Form.Group className="mb-3 bg-white pr-1" id="formGridCheckbox">
-                                                            <Form.Check className="bg-white" type="radio" name="groupOptions" label="Excellent" />
-                                                        </Form.Group>
-                                                        <Form.Group className="mb-3 bg-white pr-1" id="formGridCheckbox">
-                                                            <Form.Check className="bg-white" type="radio" name="groupOptions" label="Great" />
-                                                        </Form.Group>
-                                                        <Form.Group className="mb-3 bg-white pr-1" id="formGridCheckbox">
-                                                            <Form.Check className="bg-white" type="radio" name="groupOptions" label="Good" />
+                                                            <Form.Check className="bg-white" name="condition" onChange={this.changeHandler} checked={condition === "Excellent"} value="Excellent" type="radio" label="Excellent" />
+                                                            <Form.Check className="bg-white" name="condition" onChange={this.changeHandler} checked={condition === "Great"} value="Great" type="radio" label="Great" />
+                                                            <Form.Check className="bg-white" name="condition" onChange={this.changeHandler} checked={condition === "Good"} value="Good" type="radio" label="Good" />
                                                         </Form.Group>
                                                     </Col>
                                                     <Col className="bg-white">
                                                         <Form.Group className="mb-3 bg-white pr-1" id="formGridCheckbox">
-                                                            <Form.Check className="bg-white" type="radio" name="groupOptions" label="Okay" />
-                                                        </Form.Group>
-                                                        <Form.Group className="mb-3 bg-white pr-1" id="formGridCheckbox">
-                                                            <Form.Check className="bg-white" type="radio" name="groupOptions" label="New" />
-                                                        </Form.Group>
-                                                        <Form.Group className="mb-3 bg-white pr-1" id="formGridCheckbox">
-                                                            <Form.Check className="bg-white" type="radio" name="groupOptions" label="Used" />
+                                                            <Form.Check className="bg-white" name="condition" onChange={this.changeHandler} checked={condition === "Okay"} value="Okay" type="radio" label="Okay" />
+                                                            <Form.Check className="bg-white" name="condition" onChange={this.changeHandler} checked={condition === "New"} value="New" type="radio" label="New" />
+                                                            <Form.Check className="bg-white" name="condition" onChange={this.changeHandler} checked={condition === "Used"} value="Used" type="radio" label="Used" />
                                                         </Form.Group>
                                                     </Col>
                                                 </Row>
