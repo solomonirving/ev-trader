@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-dom';
 import { Card, Container } from 'react-bootstrap';
 
-
 const API_KEY = process.env.REACT_APP_ALGOLIA_APPLICATION_ID
 const SEARCH_KEY = process.env.REACT_APP_ALGOLIA_SEARCH_API_KEY
 const searchClient = algoliasearch(API_KEY, SEARCH_KEY);
@@ -36,7 +35,6 @@ const Hit = ({ hit }) =>
         </div>
 
 export default class Algolia extends Component {
-
 
     render() {
         return (
