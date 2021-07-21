@@ -11,13 +11,11 @@ body {
 }
 
 /*****************************
-            HEADER 
+        HEADER 
 *****************************/
 #rounded_2 {
-    /* background-color: white; */
     display: flex;
     flex-direction: row;
-    /* justify-content: space-evenly; */
 }
 #header-input {
     width: 230px !important;
@@ -89,7 +87,7 @@ body {
 }
 
 /*****************************
-            MODAL 
+        MODAL 
 *****************************/
 .sr-only, span, button.close {
     background-color: white;
@@ -114,7 +112,7 @@ button.close {
     overflow: hidden !important;
     background-color: white !important;
 }
-.ml-auto, rounded {
+.ml-auto {
     background-color: white !important;
 }
 .modalForm{
@@ -184,7 +182,7 @@ button.close {
 }
 
 /*****************************
-            NAV 
+        NAV 
 *****************************/
 .nav-link {
     color: rgb(113, 113, 113) !important;
@@ -205,7 +203,7 @@ button.close {
 }
 
 /*****************************
-            HOME 
+        HOME 
 *****************************/
 .home-main {
     padding-bottom: 1em;
@@ -296,7 +294,6 @@ button.close {
     background-color: none; 
 }
 #detail_thumbnail_2 {
-    
     width: 21%;
     margin: 8px 0 8px 0 !important;
 }
@@ -349,7 +346,7 @@ button.close {
 }
 
 /*****************************
-            LIST MY CAR
+        LIST MY CAR
 *****************************/
 #dropdown-basic-button {
     font-family: futuraLight;
@@ -378,7 +375,6 @@ button.close {
 }
 textarea {
     background-color: rgb(239,239,239) !important;
-    /* border: none !important;  */
     opacity: 50% !important;
 }
 .vehicle_detail_cont_1 {
@@ -414,7 +410,7 @@ svg {
 }
 
 /*****************************
-            ALGOLIA
+        ALGOLIA
 *****************************/
 .algolia-header {
     display: flex;
@@ -441,7 +437,7 @@ svg {
 }
 
 /*****************************
-            MEDIA QUERIES 
+        MEDIA QUERIES 
 *****************************/
 @media (max-width: 1000px) {
     .contain, .ais-Hits-list{
@@ -466,7 +462,6 @@ svg {
 }
 
 @media (max-width: 760px) {
-
     #modal_buttons {
         margin-left: 0 !important;
         margin-bottom: 10px !important;
@@ -501,9 +496,8 @@ svg {
         width: 320px;
         background-color: white !important;
         border-radius: 10px !important;
-        /* box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important; */
     }
-    .ml-auto, rounded {
+    .ml-auto {
         margin: 0 !important;
     }
     #listMyCar {
@@ -554,10 +548,9 @@ svg {
     .ais-SearchBox-form {
         margin-left: 55px;
     }    
-  }
+}
 
 @media (max-width: 630px) and  (min-width: 600px) {
-
     #modal_buttons {
         margin-left: 0 !important;
     }  
@@ -582,4 +575,4 @@ svg {
     .home-title {
         margin-left: 6px !important;
     }
-  }
+}

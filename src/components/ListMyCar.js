@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Header from './Header'
+import Header from './Header';
 import { Container, Col, Row, Card, Form, Button } from 'react-bootstrap';
 
 export default class ListMyCar extends Component {
@@ -22,15 +22,12 @@ export default class ListMyCar extends Component {
             description: '',
         }
     }
-
+    //Change Function For Forms
     changeHandler = (e) => {
         this.setState({ [e.target.name]: e.target.value })
     }
 
-    // checkHandler = (e) => {
-    //     this.setState({ [e.target.name]: e.target.value })
-    // }
-
+    //Submit Function For Post Request
     handleSubmit = (e) => {
         e.preventDefault();
         const API_KEY = process.env.REACT_APP_APIKEY
@@ -79,59 +76,58 @@ export default class ListMyCar extends Component {
             .then(response => response.text())
             .then(result => console.log(result))
             .catch(error => console.log('error', error));
-        // console.log(typeof this.state.status)
     }
 
     render() {
         const { title, seller, status, states, city, price, year, make, model, color, odometer, condition, description } = this.state
         return (
-                <Container id="vehicle_detail_container">
+            <Container id="vehicle_detail_container">
                 <Header />
-                    <Row className="justify-space-around" id="list_main_row">
+                <Row className="justify-space-around" id="list_main_row">
                         <Col className="seller_details" id="col_1" sm={12} md={5}>
                             <Row className="rounded" id="detail_image_container">
-                            <Card className="rounded border-0 shadow mt-2" id="detail_card_2">
-                                <Card.Body className="rounded mb-2 pl-4 py-2" id="detail_card_title">Seller Details <span className="text-danger">*</span> </Card.Body>
-                                <div className="bg-white d-flex justify-content-center">
-                                    <Form className="rounded bg-white detail_container">                                          
-                                        <Form.Group className="rounded">
-                                            <Form.Control className="bg-light w-100 detail_form" onChange={this.changeHandler} name="title" value={title} type="text" placeholder="Title" />
-                                        </Form.Group>
-                                        <Form.Group className="rounded">
-                                            <Form.Control className="bg-light w-100 detail_form" onChange={this.changeHandler} name="seller" value={seller} type="seller" type="text" placeholder="Sellers Name" />
-                                        </Form.Group>
+                                <Card className="rounded border-0 shadow mt-2" id="detail_card_2">
+                                    <Card.Body className="rounded mb-2 pl-4 py-2" id="detail_card_title">Seller Details <span className="text-danger">*</span> </Card.Body>
+                                    <div className="bg-white d-flex justify-content-center">
+                                        <Form className="rounded bg-white detail_container">                                          
+                                            <Form.Group className="rounded">
+                                                <Form.Control className="bg-light w-100 detail_form" onChange={this.changeHandler} name="title" value={title} type="text" placeholder="Title" />
+                                            </Form.Group>
+                                            <Form.Group className="rounded">
+                                                <Form.Control className="bg-light w-100 detail_form" onChange={this.changeHandler} name="seller" value={seller} type="seller" type="text" placeholder="Sellers Name" />
+                                            </Form.Group>
 
-                                        <div className="vehicle_detail_cont_1">
-                                            <Form.Control className="w-10 list_form" as="select" onChange={this.changeHandler} name="city" value={city} type="text" placeholder="City">
-                                                <option>City</option>
-                                                <option>Carson City</option>
-                                                <option>Freemont</option>
-                                                <option>Las Vegas</option> 
-                                                <option>Los Angeles</option>
-                                                <option>Sacramento</option>
-                                                <option>San Francisco</option>
-                                                <option>San Jose</option>
-                                                <option>Vacaville</option>
-                                                <option>Vallejo</option>
-                                                <option>Walnut Creek</option>
-                                            </Form.Control>
-                                            <Form.Control className="ml-5 w-10 list_form" as="select" onChange={this.changeHandler} name="states" value={states} type="text" placeholder="State">
-                                                <option>State</option>
-                                                <option>CA</option>
-                                                <option>FL</option>
-                                                <option>HI</option>
-                                                <option>NJ</option>                                        
-                                                <option>NV</option>
-                                                <option>NY</option>
-                                                <option>OR</option>
-                                                <option>TX</option>
-                                                <option>VA</option>
-                                                <option>WA</option>
-                                            </Form.Control>
-                                        </div>
-                                    </Form>
-                                </div>
-                            </Card>
+                                            <div className="vehicle_detail_cont_1">
+                                                <Form.Control className="w-10 list_form" as="select" onChange={this.changeHandler} name="city" value={city} type="text" placeholder="City">
+                                                    <option>City</option>
+                                                    <option>Carson City</option>
+                                                    <option>Freemont</option>
+                                                    <option>Las Vegas</option> 
+                                                    <option>Los Angeles</option>
+                                                    <option>Sacramento</option>
+                                                    <option>San Francisco</option>
+                                                    <option>San Jose</option>
+                                                    <option>Vacaville</option>
+                                                    <option>Vallejo</option>
+                                                    <option>Walnut Creek</option>
+                                                </Form.Control>
+                                                <Form.Control className="ml-5 w-10 list_form" as="select" onChange={this.changeHandler} name="states" value={states} type="text" placeholder="State">
+                                                    <option>State</option>
+                                                    <option>CA</option>
+                                                    <option>FL</option>
+                                                    <option>HI</option>
+                                                    <option>NJ</option>                                        
+                                                    <option>NV</option>
+                                                    <option>NY</option>
+                                                    <option>OR</option>
+                                                    <option>TX</option>
+                                                    <option>VA</option>
+                                                    <option>WA</option>
+                                                </Form.Control>
+                                            </div>
+                                        </Form>
+                                    </div>
+                                </Card>
                             </Row>
                                             
                             <Row className="rounded" id="detail_image_container">
@@ -211,7 +207,7 @@ export default class ListMyCar extends Component {
                                             </Col>
 
                                             <Col className="bg-white">
-                                            <Card.Body className="bg-white rounded pl-0 pt-0" id="detail_card_title">Condition <span className="text-danger">*</span></Card.Body>
+                                                <Card.Body className="bg-white rounded pl-0 pt-0" id="detail_card_title">Condition <span className="text-danger">*</span></Card.Body>
                                                 <Row className="bg-white">
                                                     <Col className="bg-white">
                                                         <Form.Group className="mb-3 bg-white pr-1" id="formGridCheckbox">
@@ -243,7 +239,7 @@ export default class ListMyCar extends Component {
                             </Card>
                         </Col>
                     </Row>
-                </Container>
+            </Container>
         )
     }
 }

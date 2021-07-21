@@ -21,12 +21,11 @@ export default class Category extends Component {
         const url = "https://cdn.contentstack.io/v3/content_types/category/entries?environment=development";
         const response = await fetch(url, requestOptions)
         const data = await response.json()
-            this.setState({headers: data.entries})
-            // console.log(data.entries)   
+        this.setState({headers: data.entries})
     }
 
     render() {
-        
+        //React Portal To Render "All Buuton" In Home Component Buttons
         return ReactDom.createPortal(
             <>
                 <Navbar id="category_items">
