@@ -30,6 +30,7 @@ export default class Modals extends Component {
             companyLogo: data.entry.company_logo.url,
             heading: data.entry.navigation_menu[0].title,                          
           });
+      (error => console.log('Login Modal Error', error));    
   }
 
     //OPEN/CLOSE FUNCTION

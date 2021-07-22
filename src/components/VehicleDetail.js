@@ -30,10 +30,11 @@ export default class VehicleDetail extends Component {
         const response = await fetch(url, requestOptions)
         const data = await response.json()
             this.setState({details: data.entry,
-                            image: data.entry.images[0].url,
-                            location_city: data.entry.location.city,
-                            location_state: data.entry.location.state,
-                        })
+                image: data.entry.images[0].url,
+                location_city: data.entry.location.city,
+                location_state: data.entry.location.state,
+            });
+        (error => console.log('Vehicle Detail Render Error', error));
     }
 
     render() {

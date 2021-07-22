@@ -28,9 +28,8 @@ export default class Header extends Component {
         const url = "https://cdn.contentstack.io/v3/content_types/header/entries/blt2063159d6e6c183a?environment=development";
         const response = await fetch(url, requestOptions)
         const data = await response.json()
-            this.setState({
-                heading: data.entry.navigation_menu[1].title,
-            });
+            this.setState({ heading: data.entry.navigation_menu[1].title });
+            (error => console.log('Header Initial Render Error', error));
     }
 
     //Search Event Handler

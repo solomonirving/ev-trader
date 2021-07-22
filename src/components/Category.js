@@ -21,7 +21,8 @@ export default class Category extends Component {
         const url = "https://cdn.contentstack.io/v3/content_types/category/entries?environment=development";
         const response = await fetch(url, requestOptions)
         const data = await response.json()
-        this.setState({headers: data.entries})
+        this.setState({headers: data.entries});
+        (error => console.log('Category Buttons Error', error));
     }
 
     render() {

@@ -75,7 +75,7 @@ export default class ListMyCar extends Component {
         const response = fetch(url, requestOptions)
             .then(response => response.text())
             .then(result => console.log(result))
-            .catch(error => console.log('error', error));
+            .catch(error => console.log('Post Request Error', error));
     }
 
     render() {

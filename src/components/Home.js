@@ -29,6 +29,7 @@ export default class Home extends Component {
         const response = await fetch(url, requestOptions)
         const data = await response.json()
         this.setState({vehicle: data.entries});
+        (error => console.log('Initial Listing Render Error', error));
     }
 
     // Function To Get Listings By MAKE
@@ -48,6 +49,7 @@ export default class Home extends Component {
         const response = await fetch(url, requestOptions)
         const data = await response.json()
         this.setState({vehicle: data.entries});
+        (error => console.log('Listings By Make Error', error));
     }
 
     // Function To Get All Listings
@@ -66,6 +68,7 @@ export default class Home extends Component {
         const response = await fetch(url, requestOptions)
         const data = await response.json()
         this.setState({vehicle: data.entries});
+        (error => console.log('Get All Listings Button Error', error));
     }
 
     // Function To Get Search Results
@@ -87,6 +90,7 @@ export default class Home extends Component {
             const response = await fetch(url, requestOptions)
             const data = await response.json()
             this.setState({vehicle: data.entries});
+            (error => console.log('Search Results Error', error));
         }
     }
 
