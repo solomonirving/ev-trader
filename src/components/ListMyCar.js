@@ -91,10 +91,10 @@ export default class ListMyCar extends Component {
                                     <div className="bg-white d-flex justify-content-center">
                                         <Form className="rounded bg-white detail_container">                                          
                                             <Form.Group className="rounded">
-                                                <Form.Control className="bg-light w-100 detail_form" onChange={this.changeHandler} name="title" value={title} type="text" placeholder="Title" />
+                                                <Form.Control className="w-100 detail_form" onChange={this.changeHandler} name="title" value={title} type="text" placeholder="Title" />
                                             </Form.Group>
                                             <Form.Group className="rounded">
-                                                <Form.Control className="bg-light w-100 detail_form" onChange={this.changeHandler} name="seller" value={seller} type="seller" type="text" placeholder="Sellers Name" />
+                                                <Form.Control className="w-100 detail_form" onChange={this.changeHandler} name="seller" value={seller} type="seller" type="text" placeholder="Sellers Name" />
                                             </Form.Group>
 
                                             <div className="vehicle_detail_cont_1">
@@ -136,7 +136,7 @@ export default class ListMyCar extends Component {
                                         <div className="bg-white rounded w-100 py-1 px-3">
                                             <div className="rounded bg-white" type="text" id="detail_card_title">Price</div>
                                             <Form.Group className="rounded w-100">
-                                                <Form.Control className="bg-light w-100 detail_form" onChange={this.changeHandler} name="price" value={price} type="text" placeholder="0.00" />
+                                                <Form.Control className="w-100 detail_form" onChange={this.changeHandler} name="price" value={price} type="text" placeholder="0.00" />
                                             </Form.Group>
                                         </div> 
                                     </div>
