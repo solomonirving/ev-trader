@@ -24,11 +24,11 @@ You can check the live demo to get first-hand experience of the website.
 Tutorial
 We have created an in-depth tutorial on how you can create a React.js starter website using Contentstack’s Node.js SDK and fetch its content from Contentstack.
 
-Build Website using React.js and Contentstack
+[Build Website using React.js and Contentstack](https://www.contentstack.com/docs/developers/sample-apps/build-a-starter-website-using-react-js-and-contentstack/)
 
 More Resources
 
-Read Contentstack docs
+Read Contentstack [docs](https://www.contentstack.com/docs/)
 
 Learn about [React.js](https://reactjs.org/docs/getting-started.html)
 
