@@ -35,4 +35,7 @@ Learn about [React.js](https://reactjs.org/docs/getting-started.html)
  
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 1051cb238e8860f752acf0cde731cf0e79ead275
