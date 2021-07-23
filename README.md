@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+EV-TRADER
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+About Contentstack: Contentstack is a headless CMS with an API-first approach that puts content at the centre. It is designed to simplify the process of publication by separating code from content.
 
-## Available Scripts
+About this project: EV-Trader is a POC designed to answer the question, what would an application that allowed the trade of electronic vehicles look like? Ev-Trader is built on top of Contentstack’s powerful headless CMS. With a fully responsive design, Ev-Trader was designed to be used on any device.
 
-In the project directory, you can run:
+Features of Ev-Trader include:
+Contentstacks Headless CMS. A powerful Content Management System. Using EV-Trader, customers can upload their vehicle and vehicle information to “The Stack”. A Site Administrator can then review the submission and publish it to the website.   
 
-### `npm start`
+Algolia Search Integration. A powerful search solution that allows users to conduct real time searches.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+![sample-homepage-screenshot](https://user-images.githubusercontent.com/8973713/126819700-b3d9be19-bd3e-417f-9fe3-a9fb0cac2564.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+![sample-vehicle-detail-screenshot](https://user-images.githubusercontent.com/8973713/126819735-bb82847f-1dfe-43e9-b83d-ed384edb4929.png)
 
-### `npm test`
+Enhancements:
+A developer that wanted to enhance the features of EV-Trader might consider doing some of the following:
+Develop a login system that will allow authenticated access to customers. 
+Develop an offer system that will allow those users to submit offers to the vehicle owner.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Live Demo
+You can check the live demo to get first-hand experience of the website.
 
-### `npm run build`
+Tutorial
+We have created an in-depth tutorial on how you can create a React.js starter website using Contentstack’s Node.js SDK and fetch its content from Contentstack.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[Build Website using React.js and Contentstack](https://www.contentstack.com/docs/developers/sample-apps/build-a-starter-website-using-react-js-and-contentstack/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+More Resources
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Read Contentstack [docs](https://www.contentstack.com/docs/)
 
-### `npm run eject`
+Learn about [React.js](https://reactjs.org/docs/getting-started.html)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+ 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
