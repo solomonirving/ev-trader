@@ -30,7 +30,7 @@ More Resources
 
 Read Contentstack docs
 
-Learn about ![React.js](https://reactjs.org/docs/getting-started.html)
+Learn about [React.js](https://reactjs.org/docs/getting-started.html)
 
  
 
