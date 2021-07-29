@@ -41,9 +41,9 @@ body {
 .mr-sm-2 border-0 {
     font-family: futuraLight !important;
 }
-.card-img, .card-img-bottom, .card-img-top {
+/* .card-img, .card-img-bottom, .card-img-top {
     width: 500px;
-}
+} */
 .nav-bar-text {
     color: rgb(96, 127, 156);
     font-size: 20px;
@@ -79,7 +79,7 @@ body {
     background-color: rgb(96, 127, 156);
 }
 #list-my-vehicle {
-    width: 110px !important;
+    width: 120px !important;
     letter-spacing: 1px;
 }
 #category_items {
