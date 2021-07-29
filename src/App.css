@@ -577,3 +577,12 @@ svg {
         margin-left: 6px !important;
     }
 }
+
+@media (max-width: 400px) {
+    /* .algolia-header {
+        background-color: rgb(247,247,247);
+    } */
+    .ais-SearchBox-form {
+        margin-left: 5px;
+    }
+}
