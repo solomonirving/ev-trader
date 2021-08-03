@@ -19,7 +19,7 @@ Develop a login system that will allow authenticated access to customers.
 Develop an offer system that will allow those users to submit offers to the vehicle owner.
 
 Live Demo
-You can check the live demo to get first-hand experience of the website.
+You can check the live demo to get first-hand experience of the [website](https://master.d3awj48ru4zrnc.amplifyapp.com/list-my-car).
 
 Tutorial
 We have created an in-depth tutorial on how you can create a React.js starter website using Contentstack’s Node.js SDK and fetch its content from Contentstack.
