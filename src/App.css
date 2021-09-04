@@ -237,6 +237,7 @@ button.close {
 }
 .card-body {
     padding: 10px 20px 10px 20px !important;
+    height: 120px;
 }
 .card-title {
     font-size: 15px !important;
@@ -247,6 +248,7 @@ button.close {
     font-size: 12px !important;
     font: rgb(113, 113, 113);
     margin: 0px 0 0 0 !important;
+
 }
 .card-text-price {
     background-color: white !important;
@@ -266,6 +268,9 @@ button.close {
     column-gap: 30px;
     width: 100%;
     padding-bottom: 15px !important;
+}
+.card-img-top {
+    max-height: 118px;
 }
 
 /*****************************
