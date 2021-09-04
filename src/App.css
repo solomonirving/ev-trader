@@ -232,13 +232,19 @@ button.close {
     color: rgb(96, 127, 156);
     font-family: futuraMedium;
 }
-.card-body, .card-text, .card-title {
+.card-body, .card-body-2, .card-text, .card-title {
     background-color: white !important;
     margin: 0 !important;
 }
 .card-body {
     padding: 10px 20px 10px 20px !important;
+}
+.card-body-2 {
+    padding: 10px 20px 10px 20px !important;
     height: 120px !important;
+    display: flex;
+    flex-direction: column;
+    width: 255px;
 }
 .card-title {
     font-size: 15px !important;
@@ -254,6 +260,7 @@ button.close {
     background-color: white !important;
     display: flex;
     justify-content: flex-end;
+    margin-top: auto;
 }
 .card-mileage-span {
     background-color: white !important;

@@ -119,7 +119,7 @@ export default class Home extends Component {
                                         <div className="home-cards">
                                             <Card className="cards shadow mb-4 border-0 bg-white rounded">
                                                 <Card.Img variant="top" src={ev.images[0].url} className=".img-fluid rounded-top" />
-                                                <Card.Body className="card-body rounded-bottom">
+                                                <Card.Body className="card-body-2 rounded-bottom">
                                                     <Card.Title>{ev.title}</Card.Title>
                                                     <Card.Text>
                                                         {ev.make}, {ev.model}<span className="card-mileage-span">{ev.odometer} MI</span>
